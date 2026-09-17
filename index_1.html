@@ -1,0 +1,1828 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>João Vitor de Souza Pereira — Data Scientist</title>
+<meta name="description" content="Data Scientist em Vitória, ES. Machine learning, NLP e séries temporais com seis anos de experiência em Customer Success & Experience em empresas SaaS. Portfólio em português, inglês e espanhol.">
+<meta name="author" content="João Vitor de Souza Pereira">
+<meta name="theme-color" content="#0a0a0b">
+<meta property="og:type" content="website">
+<meta property="og:title" content="João Vitor de Souza Pereira — Data Scientist">
+<meta property="og:description" content="Data Scientist em Vitória, ES. Machine learning, NLP e séries temporais com seis anos de experiência em Customer Success & Experience em empresas SaaS. Portfólio em português, inglês e espanhol.">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"João Vitor de Souza Pereira","jobTitle":"Data Scientist","email":"mailto:joaovitorsouza20pereira@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Vitória","addressRegion":"ES","addressCountry":"BR"},"alumniOf":[{"@type":"CollegeOrUniversity","name":"Universidade Federal do Espírito Santo"},{"@type":"CollegeOrUniversity","name":"Universidade de São Paulo"},{"@type":"EducationalOrganization","name":"TripleTen"}],"worksFor":{"@type":"Organization","name":"BitKernel"},"knowsLanguage":["pt-BR","en","es","de","it"],"sameAs":["https://www.linkedin.com/in/joao-vitor-de-souza-pereira/","https://github.com/joaovspereira"]}</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0a0b'/%3E%3Ctext x='32' y='44' font-family='Arial Narrow,Arial,sans-serif' font-weight='900' font-size='34' text-anchor='middle' fill='%23d2ff00'%3EJV%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+html{color-scheme:dark}
+[hidden]{display:none!important}
+/* ============================================================
+   JOÃO VITOR — portfolio · dark / acid
+   Single committed theme: every color is painted explicitly.
+   ============================================================ */
+:root{
+  --bg:#0a0a0b; --bg-1:#111113; --bg-2:#17171a; --bg-3:#202024;
+  --line:rgba(242,241,236,.10); --line-2:rgba(242,241,236,.20);
+  --fg:#f2f1ec; --fg-2:#b3b1a8; --fg-3:#7f7d76;
+  --acid:#d2ff00; --acid-hover:#e2ff5c; --acid-dim:rgba(210,255,0,.14); --acid-ink:#0a0a0b;
+  --font-display:"Big Shoulders Display","Arial Narrow","Roboto Condensed",Impact,sans-serif;
+  --font-body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --ease:cubic-bezier(.19,1,.22,1); --ease-2:cubic-bezier(.65,.05,0,1);
+  --gutter:clamp(16px,4.2vw,64px); --max:1400px; --header:72px; --radius:18px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header) + 16px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:16px;line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body.lock{overflow:hidden}
+h1,h2,h3,h4,p,ul,ol,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+img,svg{display:block;max-width:100%}
+strong{font-weight:600}
+::selection{background:var(--acid);color:var(--acid-ink)}
+:focus-visible{outline:2px solid var(--acid);outline-offset:3px;border-radius:2px}
+.sr-only{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{width:min(var(--max),100% - 2*var(--gutter));margin-inline:auto}
+a[href],button,summary,[role="button"]{cursor:pointer}
+
+/* ---------- type utilities ---------- */
+.display{font-family:var(--font-display);font-weight:800;line-height:.92;letter-spacing:-.005em}
+.mono{font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;font-variant-numeric:tabular-nums}
+.eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--acid);display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:18px;height:1px;background:currentColor;flex:none}
+.muted{color:var(--fg-2)}
+.chip{display:inline-flex;align-items:center;font-family:var(--font-mono);font-size:11.5px;letter-spacing:.04em;padding:6px 10px;border:1px solid var(--line-2);border-radius:999px;color:var(--fg-2);white-space:nowrap}
+.chip.acid{border-color:transparent;background:var(--acid);color:var(--acid-ink);font-weight:500}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 22px;border-radius:999px;font-weight:600;font-size:15px;line-height:1;border:1px solid transparent;transition:transform .45s var(--ease),background .3s,color .3s,border-color .3s,box-shadow .3s;white-space:nowrap}
+.btn svg{width:16px;height:16px;flex:none}
+.btn-acid{background:var(--acid);color:var(--acid-ink);box-shadow:0 10px 30px rgba(210,255,0,.12)}
+.btn-acid:hover{background:var(--acid-hover);transform:translateY(-3px);box-shadow:0 18px 40px rgba(210,255,0,.18)}
+.btn-ghost{border-color:var(--line-2);color:var(--fg);background:rgba(255,255,255,.02)}
+.btn-ghost:hover{border-color:var(--fg);transform:translateY(-3px)}
+.btn-sm{padding:10px 16px;font-size:13px}
+.icon-btn{width:46px;height:46px;border-radius:50%;border:1px solid var(--line-2);display:inline-flex;align-items:center;justify-content:center;color:var(--fg);transition:border-color .3s,background .3s,color .3s,transform .45s var(--ease)}
+.icon-btn svg{width:18px;height:18px}
+.icon-btn:hover{border-color:var(--acid);color:var(--acid);transform:translateY(-3px)}
+
+/* ---------- loader ---------- */
+.loader{position:fixed;inset:0;z-index:9998;background:var(--bg);display:grid;place-items:center;transition:transform 1s var(--ease-2),visibility 1s;will-change:transform}
+.loader.is-done{transform:translateY(-102%);visibility:hidden}
+.loader-inner{width:min(560px,100% - 48px);text-align:center}
+.loader-inner .display{font-size:clamp(88px,18vw,200px);font-weight:900;color:var(--fg);letter-spacing:-.02em;line-height:.9}
+.loader-inner .display b{color:var(--acid);font-weight:900}
+.loader-line{height:2px;background:var(--bg-3);margin:28px 0 14px;overflow:hidden}
+.loader-line i{display:block;height:100%;width:0;background:var(--acid);animation:load 1.15s var(--ease-2) forwards}
+.loader-inner .mono{color:var(--fg-3);text-transform:uppercase}
+@keyframes load{to{width:100%}}
+html.no-loader .loader{display:none}
+
+/* ---------- progress + toast ---------- */
+.progress{position:fixed;z-index:300;top:0;left:0;right:0;height:2px;pointer-events:none;padding-top:env(safe-area-inset-top,0px)}
+.progress i{display:block;height:2px;width:0;background:var(--acid);transition:width .1s linear}
+.toast{position:fixed;z-index:400;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,16px);opacity:0;background:var(--acid);color:var(--acid-ink);font-family:var(--font-mono);font-size:13px;padding:12px 18px;border-radius:999px;pointer-events:none;transition:opacity .3s,transform .5s var(--ease)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* ---------- header ---------- */
+.skip{position:fixed;z-index:9999;top:12px;left:12px;background:var(--acid);color:var(--acid-ink);padding:10px 14px;border-radius:8px;font-weight:600;transform:translateY(-160%)}
+.skip:focus{transform:none}
+.top{position:fixed;z-index:200;inset:0 0 auto;padding-top:env(safe-area-inset-top,0px);height:calc(var(--header) + env(safe-area-inset-top,0px));display:flex;align-items:center;border-bottom:1px solid transparent;transition:background .35s,border-color .35s,backdrop-filter .35s}
+.top.scrolled{background:rgba(10,10,11,.72);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-color:var(--line)}
+.top .wrap{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:24px}
+.brand{display:inline-flex;align-items:center;gap:12px}
+.brand-mark{font-family:var(--font-display);font-weight:900;font-size:26px;line-height:1;color:var(--acid);letter-spacing:-.02em}
+.brand-name{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-2)}
+.nav{display:flex;justify-content:center;gap:clamp(14px,2vw,30px)}
+.nav a{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-2);padding:8px 0;position:relative;transition:color .3s}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:1px;background:var(--acid);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease)}
+.nav a:hover,.nav a[aria-current="true"]{color:var(--fg)}
+.nav a[aria-current="true"]::after{transform:scaleX(1)}
+.actions{display:flex;align-items:center;gap:10px;justify-self:end}
+.lang{display:inline-flex;border:1px solid var(--line-2);border-radius:999px;padding:3px;gap:2px;background:rgba(255,255,255,.02)}
+.lang button{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.08em;padding:7px 11px;border-radius:999px;color:var(--fg-2);transition:background .3s,color .3s}
+.lang button:hover{color:var(--fg)}
+.lang button[aria-pressed="true"]{background:var(--acid);color:var(--acid-ink);font-weight:500}
+.menu-toggle{display:none;height:38px;padding:0 14px;border:1px solid var(--line-2);border-radius:999px;font-family:var(--font-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;align-items:center;gap:8px}
+.menu-toggle i{width:4px;height:4px;border-radius:50%;background:currentColor}
+
+/* full-screen menu (mobile) */
+.menu{position:fixed;inset:0;z-index:190;background:var(--acid);color:var(--acid-ink);padding:calc(var(--header) + 24px + env(safe-area-inset-top,0px)) var(--gutter) calc(32px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;justify-content:space-between;transform:translateY(-104%);transition:transform .8s var(--ease-2),visibility .8s;visibility:hidden}
+.menu.is-open{transform:none;visibility:visible}
+.menu nav{display:flex;flex-direction:column}
+.menu nav a{font-family:var(--font-display);font-weight:900;font-size:clamp(44px,11vw,76px);line-height:1;text-transform:uppercase;letter-spacing:-.01em;padding:10px 0;border-bottom:1px solid rgba(10,10,11,.18);display:flex;justify-content:space-between;align-items:center}
+.menu nav a::after{content:"↗";font-family:var(--font-mono);font-size:14px;font-weight:400;opacity:.6}
+body.menu-open .top{color:var(--acid-ink);border-color:transparent;background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
+body.menu-open .brand-mark,body.menu-open .brand-name{color:var(--acid-ink)}
+body.menu-open .top .lang{border-color:rgba(10,10,11,.35);background:transparent}
+body.menu-open .top .lang button{color:rgba(10,10,11,.7)}
+body.menu-open .top .lang button[aria-pressed="true"]{background:var(--acid-ink);color:var(--acid)}
+body.menu-open .top .btn-ghost{border-color:rgba(10,10,11,.4);color:var(--acid-ink);background:transparent}
+body.menu-open .menu-toggle{border-color:rgba(10,10,11,.5);color:var(--acid-ink);background:var(--acid-ink);color:var(--acid)}
+.menu-foot{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;margin-top:32px}
+.menu-foot .mono{color:rgba(10,10,11,.7);max-width:26ch}
+.menu .btn-dark{background:var(--acid-ink);color:var(--acid)}
+.menu .btn-dark:hover{background:#222}
+.menu .lang{border-color:rgba(10,10,11,.3);background:transparent}
+.menu .lang button{color:rgba(10,10,11,.7)}
+.menu .lang button[aria-pressed="true"]{background:var(--acid-ink);color:var(--acid)}
+.menu .icon-btn{border-color:rgba(10,10,11,.35);color:var(--acid-ink)}
+.menu .icon-btn:hover{border-color:var(--acid-ink);color:var(--acid-ink)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding-top:calc(var(--header) + env(safe-area-inset-top,0px) + clamp(28px,5vh,64px));padding-bottom:clamp(32px,5vw,64px);isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:
+  radial-gradient(720px 480px at 82% 22%,rgba(210,255,0,.09),transparent 70%),
+  linear-gradient(rgba(242,241,236,.045) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(242,241,236,.045) 1px,transparent 1px);
+  background-size:auto,96px 96px,96px 96px;
+  -webkit-mask-image:linear-gradient(#000 60%,transparent);mask-image:linear-gradient(#000 60%,transparent)}
+.hero-topline{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px 24px;margin-bottom:clamp(20px,3vw,36px)}
+.hero-topline .left{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px}
+.status{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:11.5px;letter-spacing:.08em;color:var(--fg);padding:7px 12px;border:1px solid var(--line-2);border-radius:999px}
+.status i{width:7px;height:7px;border-radius:50%;background:var(--acid);box-shadow:0 0 0 0 rgba(210,255,0,.6);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(210,255,0,.55)}70%{box-shadow:0 0 0 9px rgba(210,255,0,0)}100%{box-shadow:0 0 0 0 rgba(210,255,0,0)}}
+.hero-clock{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-3);display:inline-flex;gap:14px}
+.hero-clock b{font-weight:500;color:var(--fg-2)}
+.hero-name{font-family:var(--font-display);font-weight:900;text-transform:uppercase;line-height:.86;letter-spacing:-.012em;font-size:clamp(46px,8.4vw,134px);color:var(--fg);grid-column:1;grid-row:1;align-self:end}
+.hero-name .ln{display:block;overflow:hidden;padding:.17em 0 .03em;white-space:nowrap}
+.hero-name .ln+.ln{margin-top:-.17em}
+.hero-name .ln.outline{color:transparent;-webkit-text-stroke:1.5px var(--fg);paint-order:stroke fill}
+.hero-name .ch{display:inline-block;transform:translateY(112%);transition:transform 1.1s var(--ease);transition-delay:calc(var(--i) * 26ms + .1s);will-change:transform}
+.hero-name .ch.sp{width:.22em}
+html.ready .hero-name .ch,html.no-js .hero-name .ch{transform:none}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,31%);grid-template-rows:auto auto;gap:clamp(18px,2.6vw,36px) clamp(24px,4vw,72px);align-items:start}
+.hero-copy{grid-column:1;grid-row:2}
+.hero-photo-wrap{grid-column:2;grid-row:1 / span 2;align-self:start}
+.hero-role{font-family:var(--font-display);font-weight:800;text-transform:uppercase;font-size:clamp(34px,5.4vw,84px);line-height:.9;color:var(--acid);letter-spacing:-.005em}
+.hero-lede{font-size:clamp(17px,1.35vw,21px);line-height:1.5;color:var(--fg-2);max-width:56ch;margin-top:clamp(18px,2vw,28px);text-wrap:pretty}
+.hero-ctas{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:clamp(22px,2.6vw,36px)}
+.hero-ctas .socials{display:inline-flex;gap:8px;margin-left:8px}
+.tile{position:relative;aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;background:var(--bg-2);max-width:440px;justify-self:end;width:100%;cursor:pointer}
+.tile img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.06) brightness(.96);transition:filter .8s var(--ease),transform 1.2s var(--ease);transform:scale(1.01)}
+.tile:hover img,.tile:focus-within img,.tile.color img{filter:none;transform:scale(1.03)}
+.tile-frame{position:absolute;inset:14px;pointer-events:none}
+.tile-frame::before,.tile-frame::after,.tile-frame i::before,.tile-frame i::after{content:"";position:absolute;width:22px;height:22px;border:1.5px solid var(--acid)}
+.tile-frame::before{display:none}
+.tile-frame::after{top:0;right:0;border-left:0;border-bottom:0}
+.tile-frame i::before{bottom:0;left:0;border-right:0;border-top:0}
+.tile-frame i::after{bottom:0;right:0;border-left:0;border-top:0}
+.tile-label{position:absolute;top:14px;left:14px;background:var(--acid);color:var(--acid-ink);font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;padding:5px 9px;border-radius:0 0 4px 0;white-space:nowrap}
+.tile-hint{position:absolute;left:40px;right:40px;bottom:16px;display:flex;justify-content:space-between;gap:12px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(242,241,236,.75);text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.tile.color .tile-hint .hint-text{opacity:0}
+.tile-hint .hint-text{transition:opacity .4s}
+.hero-photo-wrap{display:grid;justify-items:end;gap:10px;align-content:start}
+.hero-photo-cap{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-3);justify-self:end}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);margin-top:clamp(40px,6vw,80px)}
+.stat{padding:clamp(18px,2.4vw,30px) clamp(14px,2vw,28px) 0 0;border-left:1px solid var(--line);padding-left:clamp(14px,2vw,28px)}
+.stat:first-child{border-left:0;padding-left:0}
+.stat b{display:block;font-family:var(--font-display);font-weight:800;font-size:clamp(42px,4.6vw,72px);line-height:.95;color:var(--fg);letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.stat span{display:block;margin-top:8px;font-size:13.5px;line-height:1.4;color:var(--fg-2);max-width:22ch}
+
+/* ---------- marquee ---------- */
+.marquee{background:var(--acid);color:var(--acid-ink);overflow:hidden;padding:12px 0;border-block:1px solid rgba(10,10,11,.2)}
+.marquee-track{display:flex;width:max-content;animation:marquee 46s linear infinite;will-change:transform}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-track span{font-family:var(--font-display);font-weight:800;font-size:clamp(22px,2.6vw,34px);line-height:1;text-transform:uppercase;letter-spacing:.02em;white-space:nowrap;padding-right:.5em}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* ---------- sections ---------- */
+.sec{padding-block:clamp(72px,9vw,132px);border-top:1px solid var(--line);position:relative}
+.sec-head{display:grid;grid-template-columns:1fr auto;align-items:end;gap:14px 40px;margin-bottom:clamp(36px,5vw,64px)}
+.sec-meta{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-3);text-align:right;padding-bottom:4px}
+.sec-head .sec-title,.sec-head .sec-intro{grid-column:1/-1}
+.sec-title{font-family:var(--font-display);font-weight:800;font-size:clamp(40px,5.8vw,86px);line-height:.94;letter-spacing:-.01em;max-width:18ch;text-wrap:balance;color:var(--fg)}
+.sec-intro{font-size:clamp(16px,1.2vw,19px);line-height:1.55;color:var(--fg-2);max-width:62ch;text-wrap:pretty}
+.two{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,88px);align-items:start}
+.sticky{position:sticky;top:calc(var(--header) + 32px)}
+
+/* ---------- about ---------- */
+.about-copy p{font-size:clamp(16px,1.2vw,18.5px);line-height:1.6;color:var(--fg-2);max-width:64ch}
+.about-copy p+p{margin-top:1.1em}
+.about-copy p strong{color:var(--fg);font-weight:600}
+.bring{margin-top:clamp(36px,4vw,56px)}
+.bring h3,.method h3{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--acid);margin-bottom:18px}
+.bring ul{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
+.bring li{background:var(--bg);padding:22px 22px 24px 0}
+.bring li:nth-child(even){padding-left:22px}
+.bring li:nth-child(n+3){padding-top:22px}
+.bring b{display:block;font-family:var(--font-display);font-weight:700;font-size:24px;line-height:1;margin-bottom:8px;color:var(--fg)}
+.bring p{font-size:14.5px;color:var(--fg-2);max-width:34ch}
+.method{margin-top:clamp(40px,5vw,72px);grid-column:1/-1}
+.method ol{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line-2);counter-reset:step}
+.method li{position:relative;padding:22px 20px 0 0;counter-increment:step;border-right:1px solid var(--line)}
+.method li:last-child{border-right:0}
+.method li+li{padding-left:20px}
+.method li::before{content:counter(step,decimal-leading-zero);font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;color:var(--acid);display:block;margin-bottom:12px}
+.method li::after{content:"";position:absolute;top:-1px;left:0;width:0;height:1px;background:var(--acid);transition:width 1.2s var(--ease)}
+.method li.in::after{width:100%}
+.method b{display:block;font-family:var(--font-display);font-weight:700;font-size:22px;line-height:1;margin-bottom:6px}
+.method p{font-size:14px;color:var(--fg-2)}
+
+/* ---------- projects ---------- */
+.feats{border-top:1px solid var(--line)}
+.feat{display:grid;grid-template-columns:64px minmax(0,1fr) minmax(280px,36%);gap:20px clamp(20px,3vw,48px);padding:clamp(28px,3.4vw,44px) 0;border-bottom:1px solid var(--line);position:relative;transition:background .4s}
+.feat:hover{background:linear-gradient(90deg,var(--bg-1),transparent 70%)}
+.feat-idx{font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;color:var(--fg-3);padding-top:6px;transition:color .3s}
+.feat:hover .feat-idx{color:var(--acid)}
+.feat-kind{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-3);margin-bottom:12px}
+.feat-title{font-family:var(--font-display);font-weight:800;font-size:clamp(30px,3.1vw,46px);line-height:.95;letter-spacing:-.005em;color:var(--fg);max-width:16ch}
+.feat-title a{display:inline;background:linear-gradient(var(--acid),var(--acid)) no-repeat 0 100%/0 2px;transition:background-size .5s var(--ease)}
+.feat-title a::after{content:"";position:absolute;inset:0;z-index:1}
+.feat:hover .feat-title a{background-size:100% 2px}
+.feat-desc{margin-top:14px;font-size:15.5px;line-height:1.55;color:var(--fg-2);max-width:58ch}
+.feat-foot{margin-top:18px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px}
+.feat-open{font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg);display:inline-flex;align-items:center;gap:8px;margin-left:auto}
+.feat-open svg{width:12px;height:12px;transition:transform .45s var(--ease)}
+.feat:hover .feat-open svg{transform:translate(3px,-3px)}
+.readout{display:grid;gap:14px;align-content:start;padding:18px 20px 20px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.015)}
+.ro-top{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.ro-num{font-family:var(--font-display);font-weight:900;font-size:clamp(44px,4vw,64px);line-height:.9;color:var(--acid);letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.ro-num small{font-size:.45em;font-weight:800;letter-spacing:0;margin-left:.06em}
+.ro-lab{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-3);text-align:right;max-width:14ch;line-height:1.35}
+.ro-metrics{display:flex;flex-wrap:wrap;gap:6px 18px;font-family:var(--font-mono);font-size:12.5px;color:var(--fg-2);font-variant-numeric:tabular-nums}
+.ro-metrics b{color:var(--fg);font-weight:500}
+.ro-metrics span{white-space:nowrap}
+.bars{display:grid;gap:10px;margin-top:2px}
+.bar{display:grid;grid-template-columns:1fr auto;gap:5px 12px;font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;color:var(--fg-3);font-variant-numeric:tabular-nums}
+.bar b{font-weight:500;color:var(--fg-2)}
+.bar-track{grid-column:1/-1;height:6px;background:var(--bg-3);border-radius:2px;overflow:hidden}
+.bar-fill{height:100%;width:0;background:var(--fg-3);border-radius:2px;transition:width 1.4s var(--ease)}
+.bar.accent .bar-fill{background:var(--acid)}
+.bar.accent b{color:var(--acid)}
+.in .bar-fill{width:var(--w)}
+.ro-note{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-3)}
+.sub-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin:clamp(48px,6vw,80px) 0 20px}
+.sub-head h3{font-family:var(--font-display);font-weight:800;font-size:clamp(28px,3vw,40px);line-height:1}
+.sub-head p{font-size:14.5px;color:var(--fg-2);max-width:60ch}
+.rows{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1.4fr) minmax(0,1.2fr) 28px;gap:10px 24px;padding:18px 0;border-bottom:1px solid var(--line);align-items:start;position:relative;transition:background .3s}
+.row:hover{background:linear-gradient(90deg,var(--bg-1),transparent 80%)}
+.row-title{font-family:var(--font-display);font-weight:700;font-size:22px;line-height:1.05;color:var(--fg)}
+.row-title a::after{content:"";position:absolute;inset:0}
+.row-cell{font-size:14px;color:var(--fg-2);line-height:1.45}
+.row-cell em{display:none;font-style:normal;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-3);margin-bottom:4px}
+.row-arrow{color:var(--fg-3);padding-top:4px;transition:color .3s,transform .45s var(--ease)}
+.row:hover .row-arrow{color:var(--acid);transform:translate(3px,-3px)}
+.row-arrow svg{width:14px;height:14px}
+.rows-head{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1.4fr) minmax(0,1.2fr) 28px;gap:24px;padding:0 0 10px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-3)}
+.note{margin-top:clamp(40px,5vw,64px);border:1px solid var(--line-2);border-radius:14px;padding:22px 24px;display:grid;grid-template-columns:auto 1fr;gap:14px 28px;align-items:start;background:rgba(210,255,0,.03)}
+.note p{font-size:14.5px;line-height:1.55;color:var(--fg-2);max-width:78ch}
+
+/* ---------- stack ---------- */
+.areas{display:grid;grid-template-columns:minmax(240px,36%) minmax(0,1fr);gap:0 clamp(28px,4vw,64px);border-top:1px solid var(--line-2)}
+.area{display:contents}
+.area-btn{grid-column:1;display:flex;justify-content:space-between;align-items:center;gap:12px;width:100%;text-align:left;padding:16px 0;border-bottom:1px solid var(--line);font-family:var(--font-mono);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-2);transition:color .3s,padding-left .45s var(--ease);position:relative}
+.area-btn::before{content:"";position:absolute;left:0;top:50%;width:0;height:1px;background:var(--acid);transition:width .45s var(--ease)}
+.area-btn:hover{color:var(--fg)}
+.area.is-open .area-btn{color:var(--acid);padding-left:26px}
+.area.is-open .area-btn::before{width:16px}
+.area-btn .n{font-size:11px;color:var(--fg-3);letter-spacing:.06em}
+.area-panel{grid-column:2;grid-row:1 / span 9;display:none;padding:20px 0 0;align-self:start}
+.area.is-open .area-panel{display:block}
+.area-panel h3{font-family:var(--font-display);font-weight:800;font-size:clamp(34px,3.6vw,52px);line-height:.95;margin-bottom:22px}
+.area-panel h4{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-3);margin:22px 0 12px}
+.area-panel h4:first-of-type{margin-top:0}
+.evi{display:grid;gap:8px}
+.evi a{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:13px;color:var(--fg-2);padding:8px 0;border-bottom:1px solid var(--line);transition:color .3s}
+.evi a:hover{color:var(--acid)}
+.evi a svg{width:12px;height:12px;flex:none}
+.evi p{font-size:14px;color:var(--fg-2);max-width:50ch}
+.cert{margin-top:clamp(40px,5vw,64px);display:grid;grid-template-columns:minmax(240px,36%) 1fr;gap:16px clamp(28px,4vw,64px);padding-top:22px;border-top:1px solid var(--line-2)}
+.cert h3{font-family:var(--font-display);font-weight:800;font-size:clamp(26px,2.6vw,34px);line-height:1}
+.cert p{font-size:14px;color:var(--fg-2);margin-bottom:14px}
+
+/* ---------- experience ---------- */
+.tl{--col:200px;position:relative}
+.tl-line{position:absolute;left:calc(var(--col) - 1px);top:0;bottom:0;width:2px;background:var(--bg-3)}
+.tl-line i{display:block;width:100%;height:var(--p,0%);background:var(--acid);transition:height .2s linear}
+.job{display:grid;grid-template-columns:var(--col) minmax(0,1fr);gap:8px clamp(28px,4vw,56px);padding:clamp(28px,3.4vw,44px) 0;border-bottom:1px solid var(--line);position:relative}
+.job:first-child{padding-top:8px}
+.job-dot{position:absolute;left:calc(var(--col) - 6px);top:calc(clamp(28px,3.4vw,44px) + 10px);width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--fg-3);transition:border-color .4s,background .4s,box-shadow .4s}
+.job:first-child .job-dot{top:18px}
+.job.in .job-dot{border-color:var(--acid);background:var(--acid);box-shadow:0 0 0 6px var(--acid-dim)}
+.job-when{font-family:var(--font-mono);font-size:12.5px;letter-spacing:.06em;color:var(--fg-2);padding-right:24px;display:grid;gap:8px;align-content:start;font-variant-numeric:tabular-nums}
+.job-when b{font-weight:500;color:var(--fg)}
+.job-when .chips{gap:6px}
+.job-role{font-family:var(--font-display);font-weight:800;font-size:clamp(26px,2.8vw,38px);line-height:.98;color:var(--fg)}
+.job-co{margin-top:8px;font-size:15px;color:var(--fg-2)}
+.job-co b{color:var(--fg);font-weight:600}
+.job-bul{margin-top:16px;display:grid;gap:8px;max-width:68ch}
+.job-bul li{font-size:14.5px;line-height:1.5;color:var(--fg-2);padding-left:18px;position:relative}
+.job-bul li::before{content:"";position:absolute;left:0;top:.7em;width:8px;height:1px;background:var(--acid)}
+
+/* ---------- education ---------- */
+.edu-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(32px,5vw,88px);align-items:start}
+.degs{border-top:1px solid var(--line-2)}
+.deg{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 24px;padding:22px 0;border-bottom:1px solid var(--line)}
+.deg-school{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-3);grid-column:1/-1}
+.deg-name{font-family:var(--font-display);font-weight:700;font-size:clamp(22px,2.2vw,30px);line-height:1;color:var(--fg)}
+.deg-period{font-family:var(--font-mono);font-size:12.5px;color:var(--fg-2);text-align:right;padding-top:6px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.deg-note{grid-column:1/-1;font-size:14px;color:var(--fg-2);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center}
+.curr{grid-column:1/-1;margin-top:6px}
+.curr summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;color:var(--acid);padding:6px 0}
+.curr summary::-webkit-details-marker{display:none}
+.curr summary::before{content:"+";font-size:14px;width:18px;height:18px;border:1px solid var(--acid);border-radius:50%;display:inline-grid;place-items:center;line-height:1}
+.curr[open] summary::before{content:"–"}
+.curr-table{margin-top:12px;border-top:1px solid var(--line);font-family:var(--font-mono);font-size:12.5px;font-variant-numeric:tabular-nums}
+.curr-table div{display:grid;grid-template-columns:1fr auto auto;gap:16px;padding:8px 0;border-bottom:1px solid var(--line);color:var(--fg-2)}
+.curr-table div span:not(:first-child){color:var(--fg-3);text-align:right}
+.curr-table .total{color:var(--fg);grid-template-columns:1fr auto}
+.curr-table .total span{color:var(--acid)}
+.side h3{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--acid);margin-bottom:16px}
+.langs{border-top:1px solid var(--line-2)}
+.lang-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+.lang-row b{font-family:var(--font-display);font-weight:700;font-size:22px;line-height:1}
+.lang-row span{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.08em;color:var(--fg-3);text-transform:uppercase}
+.segs{display:flex;gap:4px;grid-column:1/-1}
+.segs i{height:5px;flex:1;background:var(--bg-3);border-radius:2px;transform-origin:left;transform:scaleX(0);transition:transform .8s var(--ease),background .3s}
+.segs i.on{background:var(--acid)}
+.in .segs i{transform:none}
+.in .segs i:nth-child(2){transition-delay:.08s}.in .segs i:nth-child(3){transition-delay:.16s}.in .segs i:nth-child(4){transition-delay:.24s}.in .segs i:nth-child(5){transition-delay:.32s}
+.certs{margin-top:clamp(32px,4vw,48px)}
+.certs p{font-size:14.5px;line-height:1.55;color:var(--fg-2)}
+
+/* ---------- contact ---------- */
+.contact .sec-title{max-width:14ch}
+.contact-sub{font-size:clamp(16px,1.25vw,19px);color:var(--fg-2);max-width:60ch;margin-top:8px}
+.email{display:inline-block;margin-top:clamp(28px,4vw,48px);font-family:var(--font-display);font-weight:800;font-size:clamp(26px,4.6vw,68px);line-height:1;letter-spacing:-.01em;color:var(--fg);word-break:break-all;background:linear-gradient(var(--acid),var(--acid)) no-repeat 0 100%/0 3px;transition:background-size .6s var(--ease),color .3s}
+.email:hover{background-size:100% 3px;color:var(--acid)}
+.contact-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(24px,3vw,36px)}
+.contact-meta{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:clamp(28px,4vw,48px);font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;color:var(--fg-3);text-transform:uppercase}
+.contact-meta b{font-weight:500;color:var(--fg-2)}
+
+/* ---------- footer ---------- */
+.foot{border-top:1px solid var(--line);padding:28px 0 calc(28px + env(safe-area-inset-bottom,0px))}
+.foot .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px 24px;font-family:var(--font-mono);font-size:11.5px;letter-spacing:.06em;color:var(--fg-3)}
+.foot a{color:var(--fg-2);transition:color .3s}
+.foot a:hover{color:var(--acid)}
+
+/* ---------- CV overlay ---------- */
+.cv-layer{position:fixed;inset:0;z-index:500;background:rgba(10,10,11,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);overflow:auto;padding:0 var(--gutter) 48px}
+.cv-bar{position:sticky;top:0;z-index:2;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding:16px 0;padding-top:calc(16px + env(safe-area-inset-top,0px));background:linear-gradient(var(--bg) 70%,transparent)}
+.cv-bar .hint{font-family:var(--font-mono);font-size:11.5px;color:var(--fg-3);max-width:60ch;line-height:1.5}
+.cv-bar .grp{display:flex;gap:10px;flex-wrap:wrap}
+.cv-paper{background:#fff;color:#141414;max-width:860px;margin:12px auto 0;padding:clamp(28px,5vw,56px) clamp(22px,5vw,60px);border-radius:6px;box-shadow:0 40px 100px rgba(0,0,0,.5);font-family:var(--font-body);font-size:13.5px;line-height:1.5}
+.cv-paper *{color:inherit}
+.cv-head{display:grid;grid-template-columns:1fr auto;gap:8px 24px;align-items:start;padding-bottom:18px;border-bottom:2px solid #141414}
+.cv-head h1{font-family:var(--font-display);font-weight:900;font-size:40px;line-height:.95;letter-spacing:-.01em;text-transform:uppercase}
+.cv-head .cv-role{font-family:var(--font-mono);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;margin-top:8px;color:#333}
+.cv-contact{font-family:var(--font-mono);font-size:11.5px;line-height:1.7;text-align:right;color:#333}
+.cv-contact a{text-decoration:none;border-bottom:1px solid #999}
+.cv-photo{width:72px;height:72px;border-radius:50%;object-fit:cover;filter:grayscale(1)}
+.cv-sec{margin-top:22px}
+.cv-sec h2{font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#555;padding-bottom:6px;border-bottom:1px solid #ddd;margin-bottom:12px}
+.cv-item{display:grid;grid-template-columns:1fr auto;gap:2px 16px;margin-bottom:12px;break-inside:avoid}
+.cv-item h3{font-weight:700;font-size:14px;line-height:1.3}
+.cv-item .cv-org{color:#444;font-size:13px}
+.cv-item .cv-when{font-family:var(--font-mono);font-size:11.5px;color:#555;text-align:right;white-space:nowrap}
+.cv-item ul{grid-column:1/-1;margin-top:4px;padding-left:14px;list-style:disc}
+.cv-item li{color:#333;font-size:12.8px;line-height:1.45;margin:2px 0}
+.cv-proj{grid-column:1/-1;font-size:12.8px;color:#333}
+.cv-proj b{color:#141414}
+.cv-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px 32px}
+.cv-kv{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:12.8px}
+.cv-kv dt{font-weight:700;white-space:nowrap}
+.cv-kv dd{margin:0;color:#333}
+.cv-foot{margin-top:24px;padding-top:10px;border-top:1px solid #ddd;font-family:var(--font-mono);font-size:10.5px;color:#777;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.cv-close{width:46px;height:46px}
+
+@media print{
+  @page{margin:12mm}
+  html,body{background:#fff!important;color:#000}
+  body > *:not(.cv-layer){display:none!important}
+  .cv-layer{position:static!important;background:none!important;padding:0!important;overflow:visible!important;backdrop-filter:none!important}
+  .cv-layer[hidden]{display:block!important}
+  .cv-bar{display:none!important}
+  .cv-paper{box-shadow:none!important;max-width:none!important;margin:0!important;padding:0!important;border-radius:0!important;font-size:12.5px}
+  .cv-head{grid-template-columns:1fr auto!important}
+  .cv-contact{text-align:right!important}
+  .cv-item{grid-template-columns:1fr auto!important;margin-bottom:8px}
+  .cv-item .cv-when{text-align:right!important}
+  .cv-cols{grid-template-columns:1.35fr 1fr!important}
+  .cv-head h1{font-size:30px}
+  .cv-head{padding-bottom:10px}
+  .cv-sec{margin-top:10px}
+  .cv-sec h2{margin-bottom:8px}
+  .cv-item{margin-bottom:6px}
+  .cv-item li{font-size:11px;line-height:1.35}
+  .cv-proj,.cv-kv{font-size:11px}
+  .cv-paper{font-size:11px;line-height:1.38}
+  a{color:inherit;text-decoration:none}
+}
+
+/* ---------- reveal ---------- */
+html.js .rv{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform 1s var(--ease)}
+html.js .rv.in{opacity:1;transform:none}
+html.js .rv.d1{transition-delay:.08s}html.js .rv.d2{transition-delay:.16s}html.js .rv.d3{transition-delay:.24s}html.js .rv.d4{transition-delay:.32s}
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .marquee-track{animation:none;transform:none}
+  .hero-name .ch{transform:none!important}
+  html.js .rv{opacity:1;transform:none}
+  .in .bar-fill{transition:none}
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:1100px){
+  .nav{display:none}
+  .top .wrap{grid-template-columns:auto 1fr}
+  .menu-toggle{display:inline-flex}
+  .brand-name{display:none}
+}
+@media (max-width:960px){
+  .two,.edu-grid,.cert{grid-template-columns:1fr}
+  .sticky{position:static}
+  .method ol{grid-template-columns:1fr 1fr}
+  .method li{padding-left:0!important;padding-right:20px;border-right:0}
+  .method li:nth-child(odd){border-right:1px solid var(--line)}
+  .method li:nth-child(even){padding-left:20px!important}
+  .feat{grid-template-columns:44px minmax(0,1fr)}
+  .feat-viz{grid-column:2}
+  .row,.rows-head{grid-template-columns:minmax(0,1fr) minmax(0,1fr) 28px}
+  .rows-head span:nth-child(3),.row .row-cell:nth-of-type(2){display:none}
+  .row .row-cell.evidence{display:block;grid-column:1 / span 2}
+  .row-cell em{display:block}
+  .areas{grid-template-columns:1fr;border-top:0}
+  .area{display:block;border-top:1px solid var(--line)}
+  .area-btn{border-bottom:0}
+  .area-panel{display:none;padding:4px 0 26px}
+  .area.is-open .area-panel{display:block}
+  .tl{--col:120px}
+}
+@media (max-width:760px){
+  :root{--header:64px}
+  .hero-grid{grid-template-columns:1fr;grid-template-rows:none;align-items:start}
+  .hero-name{grid-column:auto;grid-row:auto;order:1;font-size:clamp(38px,13.4vw,70px)}
+  .hero-photo-wrap{grid-column:auto;grid-row:auto;order:2;justify-items:start}
+  .hero-copy{grid-column:auto;grid-row:auto;order:3}
+  .tile{max-width:min(280px,72vw);justify-self:start}
+  .hero-photo-cap{justify-self:start}
+  .stats{grid-template-columns:1fr 1fr;gap:0}
+  .stat{padding-top:18px;padding-bottom:6px}
+  .stat:nth-child(3){border-left:0;padding-left:0}
+  .stat:nth-child(n+3){border-top:1px solid var(--line);margin-top:14px}
+  .stat b{font-size:40px}
+  .sec-head{grid-template-columns:1fr}
+  .sec-meta{text-align:left;order:3;padding:0}
+  .bring ul{grid-template-columns:1fr}
+  .bring li{padding-left:0!important;padding-right:0}
+  .job{grid-template-columns:1fr}
+  .tl-line{left:0}
+  .job{padding-left:24px}
+  .job-dot{left:-5px}
+  .job:first-child .job-dot{top:16px}
+  .job-when{padding-right:0}
+  .feat{grid-template-columns:1fr}
+  .feat-viz{grid-column:1}
+  .feat-idx{padding-top:0}
+  .cv-head{grid-template-columns:1fr}
+  .cv-contact{text-align:left}
+  .cv-cols{grid-template-columns:1fr}
+  .cv-item{grid-template-columns:1fr}
+  .cv-item .cv-when{text-align:left}
+  .deg{grid-template-columns:1fr}
+  .deg-period{text-align:left;padding-top:0}
+  .row,.rows-head{grid-template-columns:minmax(0,1fr) 28px}
+  .rows-head span:nth-child(2){display:none}
+  .row .row-cell{grid-column:1}
+  .row .row-cell.evidence{grid-column:1}
+  .method ol{grid-template-columns:1fr}
+  .method li{border-right:0!important;padding-left:0!important;padding-right:0}
+  .method li+li{border-top:1px solid var(--line)}
+  .method li::after{display:none}
+  .method li:nth-child(even){padding-left:0!important}
+  .email{word-break:break-word}
+  .note{grid-template-columns:1fr;gap:10px}
+  .sub-head{flex-direction:column;align-items:flex-start;gap:10px}
+  .tile-hint span:last-child{display:none}
+  .tile-hint{font-size:9.5px;letter-spacing:.06em;left:16px;right:40px;bottom:14px}
+}
+@media (max-width:480px){
+  .top .cv-open{display:none}
+}
+@media (max-width:420px){
+  .hero-topline{margin-bottom:16px}
+  .lang button{padding:7px 9px}
+  .btn{padding:13px 18px;font-size:14px}
+}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">Pular para o conteúdo</a>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-inner">
+    <div class="display" aria-hidden="true">J<b>V</b></div>
+    <div class="loader-line"><i></i></div>
+    <div class="mono" data-i18n="loader.hint">carregando portfólio</div>
+  </div>
+</div>
+
+<div class="progress" aria-hidden="true"><i id="progress"></i></div>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="João Vitor — início">
+      <span class="brand-mark" aria-hidden="true">JV</span>
+      <span class="brand-name">João Vitor · Data Scientist</span>
+    </a>
+    <nav class="nav" aria-label="Seções">
+      <a href="#sobre" data-i18n="nav.about" data-spy="sobre">Sobre</a>
+      <a href="#projetos" data-i18n="nav.projects" data-spy="projetos">Projetos</a>
+      <a href="#stack" data-i18n="nav.stack" data-spy="stack">Stack</a>
+      <a href="#experiencia" data-i18n="nav.experience" data-spy="experiencia">Experiência</a>
+      <a href="#formacao" data-i18n="nav.education" data-spy="formacao">Formação</a>
+      <a href="#contato" data-i18n="nav.contact" data-spy="contato">Contato</a>
+    </nav>
+    <div class="actions">
+      <div class="lang" role="group" aria-label="Idioma" data-i18n-aria="lang.label">
+        <button type="button" data-lang="pt" aria-pressed="true" lang="pt-BR">PT</button>
+        <button type="button" data-lang="en" aria-pressed="false" lang="en">EN</button>
+        <button type="button" data-lang="es" aria-pressed="false" lang="es">ES</button>
+      </div>
+      <button type="button" class="btn btn-ghost btn-sm cv-open" data-i18n="nav.cv">Baixar CV</button>
+      <button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="menu"><span data-i18n="nav.menu">Menu</span><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <nav aria-label="Menu">
+    <a href="#sobre" data-i18n="nav.about">Sobre</a>
+    <a href="#projetos" data-i18n="nav.projects">Projetos</a>
+    <a href="#stack" data-i18n="nav.stack">Stack</a>
+    <a href="#experiencia" data-i18n="nav.experience">Experiência</a>
+    <a href="#formacao" data-i18n="nav.education">Formação</a>
+    <a href="#contato" data-i18n="nav.contact">Contato</a>
+  </nav>
+  <div class="menu-foot">
+    <p class="mono" data-i18n="menu.tagline">Dados, cliente e operação — no mesmo lugar.</p>
+    <button type="button" class="btn btn-dark cv-open" data-i18n="nav.cv">Baixar CV</button>
+    <div class="lang" role="group" aria-label="Idioma" data-i18n-aria="lang.label">
+      <button type="button" data-lang="pt" aria-pressed="true" lang="pt-BR">PT</button>
+      <button type="button" data-lang="en" aria-pressed="false" lang="en">EN</button>
+      <button type="button" data-lang="es" aria-pressed="false" lang="es">ES</button>
+    </div>
+    <div class="socials" style="display:flex;gap:8px">
+      <a class="icon-btn" href="https://www.linkedin.com/in/joao-vitor-de-souza-pereira/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+      <a class="icon-btn" href="https://github.com/joaovspereira" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.58.24 2.75.12 3.04.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.13v3.16c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg></a>
+      <a class="icon-btn" href="mailto:joaovitorsouza20pereira@gmail.com" aria-label="E-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="inicio">
+    <div class="wrap">
+      <div class="hero-topline rv in">
+        <div class="left">
+          <span class="eyebrow" data-i18n="hero.eyebrow">Data Scientist · Vitória, ES — Brasil</span>
+          <span class="status"><i aria-hidden="true"></i><span data-i18n="hero.status">Aberto a oportunidades</span></span>
+        </div>
+        <div class="hero-clock"><span><span data-i18n="hero.local">hora local</span> <b id="clock">--:--</b></span><span data-i18n="hero.updated">atualizado em set 2026</span></div>
+      </div>
+
+      <div class="hero-grid">
+        <h1 class="hero-name" aria-label="João Vitor de Souza Pereira">
+          <span class="ln" data-split="João Vitor" aria-hidden="true">João Vitor</span>
+          <span class="ln outline" data-split="de Souza Pereira" aria-hidden="true">de Souza Pereira</span>
+        </h1>
+        <div class="hero-copy rv in">
+          <p class="hero-role" data-i18n="hero.role">Data Scientist</p>
+          <p class="hero-lede" data-i18n="hero.lede">Transformo perguntas de negócio em análise de dados e machine learning — com seis anos de experiência do lado do cliente em empresas SaaS e formação em Data Science pela TripleTen.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-acid" href="#projetos"><span data-i18n="hero.cta.projects">Ver projetos</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+            <button type="button" class="btn btn-ghost cv-open"><span data-i18n="hero.cta.cv">Baixar CV</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></button>
+            <span class="socials">
+              <a class="icon-btn" href="https://www.linkedin.com/in/joao-vitor-de-souza-pereira/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+              <a class="icon-btn" href="https://github.com/joaovspereira" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.58.24 2.75.12 3.04.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.13v3.16c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg></a>
+            </span>
+          </div>
+        </div>
+
+        <div class="hero-photo-wrap rv in d2">
+          <figure class="tile" id="tile" tabindex="0">
+            <img src="data:image/jpeg;base64,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" width="368" height="460" alt="Retrato de João Vitor de Souza Pereira" data-i18n-alt="hero.photo.alt" fetchpriority="high">
+            <span class="tile-frame" aria-hidden="true"><i></i></span>
+            <span class="tile-label" aria-hidden="true">data_scientist · 0.99</span>
+            <span class="tile-hint" aria-hidden="true"><span class="hint-text" data-i18n="hero.photo.hint">passe o mouse para ver em cores</span><span>368×460</span></span>
+          </figure>
+          <figcaption class="hero-photo-cap">Vitória · ES · BR</figcaption>
+        </div>
+      </div>
+
+      <div class="stats rv in d3" id="stats">
+        <div class="stat"><b data-count="4" data-i18n="stat.1.n">4</b><span data-i18n="stat.1.l">estudos de caso com métricas salvas</span></div>
+        <div class="stat"><b data-count="6" data-i18n="stat.2.n">6</b><span data-i18n="stat.2.l">anos em Customer Success &amp; Experience</span></div>
+        <div class="stat"><b data-count="600" data-suffix="+" data-i18n="stat.3.n">600+</b><span data-i18n="stat.3.l">horas de bootcamp em Data Science</span></div>
+        <div class="stat"><b data-count="3" data-i18n="stat.4.n">3</b><span data-i18n="stat.4.l">idiomas de trabalho · PT · EN · ES</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="sec" id="sobre">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow rv" data-i18n="about.label">Sobre</span>
+        <span class="sec-meta rv" data-i18n="about.meta">Vitória, ES · remoto &amp; híbrido</span>
+      </div>
+      <div class="two">
+        <h2 class="sec-title sticky rv" data-i18n="about.title">Entendo o cliente e a operação tanto quanto o modelo.</h2>
+        <div class="about-copy rv d1">
+          <p data-i18n="about.p1"></p>
+          <p data-i18n="about.p2"></p>
+          <div class="bring">
+            <h3 data-i18n="about.bring">O que levo para um time de dados</h3>
+            <ul>
+              <li><b data-i18n="about.b1.t"></b><p data-i18n="about.b1.d"></p></li>
+              <li><b data-i18n="about.b2.t"></b><p data-i18n="about.b2.d"></p></li>
+              <li><b data-i18n="about.b3.t"></b><p data-i18n="about.b3.d"></p></li>
+              <li><b data-i18n="about.b4.t"></b><p data-i18n="about.b4.d"></p></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="method rv">
+        <h3 data-i18n="about.method">Como eu trabalho</h3>
+        <ol>
+          <li class="rv-step"><b data-i18n="about.m1.t"></b><p data-i18n="about.m1.d"></p></li>
+          <li class="rv-step"><b data-i18n="about.m2.t"></b><p data-i18n="about.m2.d"></p></li>
+          <li class="rv-step"><b data-i18n="about.m3.t"></b><p data-i18n="about.m3.d"></p></li>
+          <li class="rv-step"><b data-i18n="about.m4.t"></b><p data-i18n="about.m4.d"></p></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section class="sec" id="projetos">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow rv" data-i18n="proj.label">Projetos</span>
+        <span class="sec-meta rv" data-i18n="proj.meta"></span>
+        <h2 class="sec-title rv" data-i18n="proj.title">Estudos de caso com métricas verificáveis.</h2>
+        <p class="sec-intro rv d1" data-i18n="proj.intro"></p>
+      </div>
+      <div class="feats" id="featured"></div>
+
+      <div class="sub-head rv"><h3 data-i18n="proj.more">Mais estudos de caso</h3></div>
+      <div class="rows-head rv"><span></span><span data-i18n="proj.more.focus">Foco</span><span data-i18n="proj.more.evidence">Evidência</span><span></span></div>
+      <div class="rows" id="more"></div>
+
+      <div class="sub-head rv"><h3 data-i18n="proj.applied">Implementações aplicadas</h3><p data-i18n="proj.applied.intro"></p></div>
+      <div class="rows-head rv"><span></span><span data-i18n="proj.applied.inspect">O que inspecionar ou executar</span><span data-i18n="proj.applied.verify">Verificação</span><span></span></div>
+      <div class="rows" id="applied"></div>
+
+      <div class="note rv">
+        <span class="eyebrow" data-i18n="proj.note.label">Nota sobre evidência</span>
+        <p data-i18n="proj.note"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STACK ================= -->
+  <section class="sec" id="stack">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow rv" data-i18n="stack.label">Stack</span>
+        <span class="sec-meta rv" data-i18n="stack.meta"></span>
+        <h2 class="sec-title rv" data-i18n="stack.title">Ferramentas a serviço da pergunta.</h2>
+        <p class="sec-intro rv d1" data-i18n="stack.intro"></p>
+      </div>
+      <div class="areas rv" id="areas"></div>
+      <div class="cert rv">
+        <h3 data-i18n="stack.cert">Certificado TripleTen · Data Scientist</h3>
+        <div><p data-i18n="stack.cert.d"></p><div class="chips" id="certSkills"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EXPERIENCE ================= -->
+  <section class="sec" id="experiencia">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow rv" data-i18n="exp.label">Experiência</span>
+        <span class="sec-meta rv" data-i18n="exp.meta"></span>
+        <h2 class="sec-title rv" data-i18n="exp.title">Seis anos do lado do cliente.</h2>
+        <p class="sec-intro rv d1" data-i18n="exp.intro"></p>
+      </div>
+      <div class="tl" id="timeline"><div class="tl-line" aria-hidden="true"><i id="tlFill"></i></div></div>
+    </div>
+  </section>
+
+  <!-- ================= EDUCATION ================= -->
+  <section class="sec" id="formacao">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow rv" data-i18n="edu.label">Formação</span>
+        <span class="sec-meta rv" data-i18n="edu.meta"></span>
+        <h2 class="sec-title rv" data-i18n="edu.title">Negócios e dados, em paralelo.</h2>
+      </div>
+      <div class="edu-grid">
+        <div class="degs rv" id="degrees"></div>
+        <aside class="side rv d1">
+          <h3 data-i18n="lang.title">Idiomas</h3>
+          <div class="langs" id="languages"></div>
+          <div class="certs">
+            <h3 data-i18n="edu.certs">Certificações</h3>
+            <p data-i18n="edu.certs.d"></p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="sec contact" id="contato">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow rv" data-i18n="contact.label">Contato</span>
+        <span class="sec-meta rv" data-i18n="contact.meta"></span>
+        <h2 class="sec-title rv" data-i18n="contact.title">Vamos conversar sobre dados.</h2>
+        <p class="sec-intro contact-sub rv d1" data-i18n="contact.sub"></p>
+      </div>
+      <a class="email rv" href="mailto:joaovitorsouza20pereira@gmail.com">joaovitorsouza20pereira@gmail.com</a>
+      <div class="contact-ctas rv d1">
+        <button type="button" class="btn btn-acid" id="copyEmail"><span data-i18n="contact.copy">Copiar e-mail</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+        <a class="btn btn-ghost" href="mailto:joaovitorsouza20pereira@gmail.com"><span data-i18n="contact.write">Escrever e-mail</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/joao-vitor-de-souza-pereira/" target="_blank" rel="noopener">LinkedIn <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        <a class="btn btn-ghost" href="https://github.com/joaovspereira" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      </div>
+      <div class="contact-meta rv d2">
+        <span><b data-i18n="contact.location">Vitória, ES — Brasil · UTC−3</b></span>
+        <span data-i18n="contact.avail">Experiência remota, híbrida e presencial</span>
+        <span><span data-i18n="hero.local">hora local</span> <b class="clock">--:--</b></span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>© 2026 João Vitor de Souza Pereira · <span data-i18n="footer.rights">Todos os direitos reservados.</span></span>
+    <span data-i18n="footer.made">Site feito à mão em HTML, CSS e JavaScript — sem frameworks.</span>
+    <a href="#inicio" data-i18n="footer.top">Voltar ao topo</a>
+  </div>
+</footer>
+
+<!-- ================= CV OVERLAY ================= -->
+<div class="cv-layer" id="cv" hidden role="dialog" aria-modal="true" aria-labelledby="cvTitle">
+  <div class="cv-bar">
+    <div class="grp">
+      <button type="button" class="icon-btn cv-close" id="cvClose" aria-label="Fechar" data-i18n-aria="nav.close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      <button type="button" class="btn btn-acid" id="cvPrint"><span data-i18n="cv.print">Imprimir / Salvar como PDF</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7"/></svg></button>
+      <div class="lang" role="group" aria-label="Idioma" data-i18n-aria="lang.label">
+        <button type="button" data-lang="pt" aria-pressed="true" lang="pt-BR">PT</button>
+        <button type="button" data-lang="en" aria-pressed="false" lang="en">EN</button>
+        <button type="button" data-lang="es" aria-pressed="false" lang="es">ES</button>
+      </div>
+    </div>
+    <p class="hint" data-i18n="cv.hint"></p>
+  </div>
+  <article class="cv-paper" id="cvPaper"></article>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ============================================================
+   CONTENT — all copy in PT / EN / ES. Facts come from LinkedIn,
+   GitHub (profile README + repos) and the TripleTen certificate.
+   ============================================================ */
+const PROFILE = {
+  name: "João Vitor de Souza Pereira",
+  first: "João Vitor",
+  last: "de Souza Pereira",
+  email: "joaovitorsouza20pereira@gmail.com",
+  linkedin: "https://www.linkedin.com/in/joao-vitor-de-souza-pereira/",
+  github: "https://github.com/joaovspereira",
+  city: "Vitória, ES",
+  country: { pt: "Brasil", en: "Brazil", es: "Brasil" },
+  tz: "America/Sao_Paulo",
+};
+
+const UI = {
+  /* ---------- meta ---------- */
+  "meta.title": { pt: "João Vitor de Souza Pereira — Data Scientist", en: "João Vitor de Souza Pereira — Data Scientist", es: "João Vitor de Souza Pereira — Data Scientist" },
+  "meta.desc": {
+    pt: "Data Scientist em Vitória, ES. Machine learning, NLP e séries temporais com seis anos de experiência em Customer Success & Experience em empresas SaaS.",
+    en: "Data Scientist based in Vitória, Brazil. Machine learning, NLP and time series backed by six years in Customer Success & Experience at SaaS companies.",
+    es: "Data Scientist en Vitória, Brasil. Machine learning, NLP y series temporales con seis años de experiencia en Customer Success & Experience en empresas SaaS.",
+  },
+
+  /* ---------- loader ---------- */
+  "loader.hint": { pt: "carregando portfólio", en: "loading portfolio", es: "cargando portafolio" },
+
+  /* ---------- header / nav ---------- */
+  "skip": { pt: "Pular para o conteúdo", en: "Skip to content", es: "Saltar al contenido" },
+  "nav.about": { pt: "Sobre", en: "About", es: "Sobre mí" },
+  "nav.projects": { pt: "Projetos", en: "Projects", es: "Proyectos" },
+  "nav.stack": { pt: "Stack", en: "Toolkit", es: "Stack" },
+  "nav.experience": { pt: "Experiência", en: "Experience", es: "Experiencia" },
+  "nav.education": { pt: "Formação", en: "Education", es: "Formación" },
+  "nav.contact": { pt: "Contato", en: "Contact", es: "Contacto" },
+  "nav.cv": { pt: "Baixar CV", en: "Download CV", es: "Descargar CV" },
+  "nav.menu": { pt: "Menu", en: "Menu", es: "Menú" },
+  "nav.close": { pt: "Fechar", en: "Close", es: "Cerrar" },
+  "lang.label": { pt: "Idioma", en: "Language", es: "Idioma" },
+  "menu.tagline": { pt: "Dados, cliente e operação — no mesmo lugar.", en: "Data, customer and operation — in one place.", es: "Datos, cliente y operación — en un mismo lugar." },
+
+  /* ---------- hero ---------- */
+  "hero.eyebrow": { pt: "Data Scientist · Vitória, ES — Brasil", en: "Data Scientist · Vitória, ES — Brazil", es: "Data Scientist · Vitória, ES — Brasil" },
+  "hero.status": { pt: "Aberto a oportunidades", en: "Open to opportunities", es: "Abierto a oportunidades" },
+  "hero.role": { pt: "Data Scientist", en: "Data Scientist", es: "Data Scientist" },
+  "hero.lede": {
+    pt: "Transformo perguntas de negócio em análise de dados e machine learning — com seis anos de experiência do lado do cliente em empresas SaaS e formação em Data Science pela TripleTen.",
+    en: "I turn business questions into data analysis and machine learning — backed by six years on the customer side of SaaS companies and Data Science training at TripleTen.",
+    es: "Convierto preguntas de negocio en análisis de datos y machine learning — con seis años de experiencia del lado del cliente en empresas SaaS y formación en Data Science por TripleTen.",
+  },
+  "hero.cta.projects": { pt: "Ver projetos", en: "View projects", es: "Ver proyectos" },
+  "hero.cta.cv": { pt: "Baixar CV", en: "Download CV", es: "Descargar CV" },
+  "hero.photo.alt": { pt: "Retrato de João Vitor de Souza Pereira", en: "Portrait of João Vitor de Souza Pereira", es: "Retrato de João Vitor de Souza Pereira" },
+  "hero.photo.hint": { pt: "passe o mouse para ver em cores", en: "hover to see in color", es: "pasa el cursor para ver en color" },
+  "hero.photo.tap": { pt: "toque para ver em cores", en: "tap to see in color", es: "toca para ver en color" },
+  "hero.local": { pt: "hora local", en: "local time", es: "hora local" },
+  "hero.updated": { pt: "atualizado em set 2026", en: "updated Sep 2026", es: "actualizado sep 2026" },
+  "hero.scroll": { pt: "rolar", en: "scroll", es: "desplazar" },
+
+  "stat.1.n": { pt: "4", en: "4", es: "4" },
+  "stat.1.l": { pt: "estudos de caso com métricas salvas", en: "case studies with saved metrics", es: "casos de estudio con métricas guardadas" },
+  "stat.2.n": { pt: "6", en: "6", es: "6" },
+  "stat.2.l": { pt: "anos em Customer Success & Experience", en: "years in Customer Success & Experience", es: "años en Customer Success & Experience" },
+  "stat.3.n": { pt: "600+", en: "600+", es: "600+" },
+  "stat.3.l": { pt: "horas de bootcamp em Data Science", en: "hours of Data Science bootcamp", es: "horas de bootcamp en Data Science" },
+  "stat.4.n": { pt: "3", en: "3", es: "3" },
+  "stat.4.l": { pt: "idiomas de trabalho · PT · EN · ES", en: "working languages · PT · EN · ES", es: "idiomas de trabajo · PT · EN · ES" },
+
+  /* ---------- marquee ---------- */
+  "marquee": {
+    pt: "Machine Learning · NLP · Séries temporais · Customer Analytics · SQL · Python · Business Analytics · Forecasting · Regressão · Classificação · ",
+    en: "Machine Learning · NLP · Time Series · Customer Analytics · SQL · Python · Business Analytics · Forecasting · Regression · Classification · ",
+    es: "Machine Learning · NLP · Series temporales · Customer Analytics · SQL · Python · Business Analytics · Forecasting · Regresión · Clasificación · ",
+  },
+
+  /* ---------- about ---------- */
+  "about.label": { pt: "Sobre", en: "About", es: "Sobre mí" },
+  "about.meta": { pt: "Vitória, ES · remoto & híbrido", en: "Vitória, Brazil · remote & hybrid", es: "Vitória, Brasil · remoto e híbrido" },
+  "about.title": { pt: "Entendo o cliente e a operação tanto quanto o modelo.", en: "I understand the customer and the operation as well as the model.", es: "Entiendo al cliente y la operación tanto como al modelo." },
+  "about.p1": {
+    pt: "Antes dos notebooks, vieram os tickets. Liderei e estruturei operações de Customer Service & Experience em empresas SaaS — da definição de processos e indicadores (NPS, CSAT, FCR, AHT) à colaboração diária com Produto e Engenharia. Hoje, na BitKernel, atendo carteiras B2B e B2C no Brasil, na Europa e na APAC em uma plataforma de streaming para empresas.",
+    en: "Before the notebooks came the tickets. I led and built Customer Service & Experience operations at SaaS companies — from defining processes and indicators (NPS, CSAT, FCR, AHT) to daily collaboration with Product and Engineering. Today, at BitKernel, I manage B2B and B2C portfolios across Brazil, Europe and APAC on a streaming platform for businesses.",
+    es: "Antes de los notebooks llegaron los tickets. Lideré y estructuré operaciones de Customer Service & Experience en empresas SaaS — desde la definición de procesos e indicadores (NPS, CSAT, FCR, AHT) hasta la colaboración diaria con Producto e Ingeniería. Hoy, en BitKernel, atiendo carteras B2B y B2C en Brasil, Europa y APAC en una plataforma de streaming para empresas.",
+  },
+  "about.p2": {
+    pt: "Em 2025–2026 concluí o bootcamp de Data Science da TripleTen (600+ horas), somando à graduação em Administração pela UFES e aos MBAs na USP em Gestão Estratégica e em Negócios Digitais e Inteligência Artificial. Me interessam problemas em que entender o cliente e a operação importa tanto quanto escolher o modelo: retenção, eficiência do atendimento, produtos digitais e processos industriais.",
+    en: "In 2025–2026 I completed TripleTen's Data Science bootcamp (600+ hours), on top of a Business Administration degree from UFES and MBAs at USP in Strategic Management and in Digital Business & Artificial Intelligence. I am drawn to problems where understanding the customer and the operation matters as much as selecting the model: retention, service efficiency, digital products and industrial processes.",
+    es: "En 2025–2026 completé el bootcamp de Data Science de TripleTen (600+ horas), sumado a la licenciatura en Administración por la UFES y a los MBA en la USP en Gestión Estratégica y en Negocios Digitales e Inteligencia Artificial. Me interesan los problemas en los que entender al cliente y la operación importa tanto como elegir el modelo: retención, eficiencia del servicio, productos digitales y procesos industriales.",
+  },
+  "about.bring": { pt: "O que levo para um time de dados", en: "What I bring to a data team", es: "Lo que aporto a un equipo de datos" },
+  "about.b1.t": { pt: "Contexto de negócio", en: "Business context", es: "Contexto de negocio" },
+  "about.b1.d": { pt: "Transformo necessidades de clientes e da operação em perguntas claras, requisitos e prioridades.", en: "I turn customer and operational needs into clear questions, requirements and priorities.", es: "Convierto necesidades de clientes y de la operación en preguntas claras, requisitos y prioridades." },
+  "about.b2.t": { pt: "Comunicação multifuncional", en: "Cross-functional communication", es: "Comunicación multifuncional" },
+  "about.b2.d": { pt: "Trabalho na interface entre clientes B2B, Produto e Engenharia — em português, inglês e espanhol.", en: "I work at the interface of B2B customers, Product and Engineering — in Portuguese, English and Spanish.", es: "Trabajo en la interfaz entre clientes B2B, Producto e Ingeniería — en portugués, inglés y español." },
+  "about.b3.t": { pt: "Disciplina analítica", en: "Analytical discipline", es: "Disciplina analítica" },
+  "about.b3.d": { pt: "Comparo com baselines, defino critérios de avaliação e explico os limites da evidência.", en: "I compare against baselines, define evaluation criteria and explain the limits of the evidence.", es: "Comparo con baselines, defino criterios de evaluación y explico los límites de la evidencia." },
+  "about.b4.t": { pt: "Perspectiva do cliente", en: "Customer perspective", es: "Perspectiva del cliente" },
+  "about.b4.d": { pt: "Conecto saídas de modelo a qualidade de serviço, comportamento do usuário e decisões práticas.", en: "I connect model outputs to service quality, user behavior and practical decisions.", es: "Conecto las salidas del modelo con la calidad del servicio, el comportamiento del usuario y decisiones prácticas." },
+  "about.method": { pt: "Como eu trabalho", en: "How I work", es: "Cómo trabajo" },
+  "about.m1.t": { pt: "Entender a pergunta", en: "Understand the question", es: "Entender la pregunta" },
+  "about.m1.d": { pt: "Qual decisão o resultado vai apoiar — e para quem.", en: "Which decision the result will support — and for whom.", es: "Qué decisión apoyará el resultado — y para quién." },
+  "about.m2.t": { pt: "Preparar e validar os dados", en: "Prepare and validate the data", es: "Preparar y validar los datos" },
+  "about.m2.d": { pt: "Joins verificados, valores ausentes explicados, vazamento evitado.", en: "Validated joins, explained missing values, no leakage.", es: "Joins verificados, valores ausentes explicados, sin fugas de datos." },
+  "about.m3.t": { pt: "Modelar contra um baseline", en: "Model against a baseline", es: "Modelar contra un baseline" },
+  "about.m3.d": { pt: "Métrica definida antes; validação temporal quando o tempo importa.", en: "Metric defined upfront; temporal validation when time matters.", es: "Métrica definida antes; validación temporal cuando el tiempo importa." },
+  "about.m4.t": { pt: "Traduzir em decisão", en: "Translate into a decision", es: "Traducir en decisión" },
+  "about.m4.d": { pt: "Risco, limites e próximos passos em linguagem de negócio.", en: "Risk, limits and next steps in business language.", es: "Riesgo, límites y próximos pasos en lenguaje de negocio." },
+
+  /* ---------- projects ---------- */
+  "proj.label": { pt: "Projetos", en: "Projects", es: "Proyectos" },
+  "proj.meta": { pt: "11 repositórios de projetos · github.com/joaovspereira", en: "11 project repositories · github.com/joaovspereira", es: "11 repositorios de proyectos · github.com/joaovspereira" },
+  "proj.title": { pt: "Estudos de caso com métricas verificáveis.", en: "Case studies with verifiable metrics.", es: "Casos de estudio con métricas verificables." },
+  "proj.intro": {
+    pt: "Cada repositório documenta o escopo da avaliação, o que foi executado originalmente e o que foi corrigido e reexecutado. Os números abaixo vêm dos resultados salvos.",
+    en: "Each repository documents the evaluation scope, what was executed originally and what was corrected and rerun. The numbers below come from saved results.",
+    es: "Cada repositorio documenta el alcance de la evaluación, lo que se ejecutó originalmente y lo que se corrigió y volvió a ejecutar. Los números de abajo provienen de resultados guardados.",
+  },
+  "proj.featured": { pt: "Em destaque", en: "Featured", es: "Destacados" },
+  "proj.open": { pt: "Abrir repositório", en: "Open repository", es: "Abrir repositorio" },
+  "proj.more": { pt: "Mais estudos de caso", en: "More case studies", es: "Más casos de estudio" },
+  "proj.more.focus": { pt: "Foco", en: "Focus", es: "Enfoque" },
+  "proj.more.evidence": { pt: "Evidência", en: "Evidence", es: "Evidencia" },
+  "proj.applied": { pt: "Implementações aplicadas", en: "Applied implementations", es: "Implementaciones aplicadas" },
+  "proj.applied.intro": {
+    pt: "Revisões públicas que estendem projetos anteriores com métodos corrigidos e verificações executáveis. Instacart, telecom e seguros incluem exemplos sintéticos; o app de veículos roda localmente com demo sintética ou CSV próprio.",
+    en: "Public revisions that extend earlier projects with corrected methods and executable checks. Instacart, telecom and insurance include synthetic examples; the vehicle app runs locally with a synthetic demo or your own CSV.",
+    es: "Revisiones públicas que extienden proyectos anteriores con métodos corregidos y verificaciones ejecutables. Instacart, telecom y seguros incluyen ejemplos sintéticos; la app de vehículos se ejecuta localmente con una demo sintética o un CSV propio.",
+  },
+  "proj.applied.inspect": { pt: "O que inspecionar ou executar", en: "What you can inspect or run", es: "Qué inspeccionar o ejecutar" },
+  "proj.applied.verify": { pt: "Verificação", en: "Verification", es: "Verificación" },
+  "proj.note.label": { pt: "Nota sobre evidência", en: "A note on evidence", es: "Nota sobre la evidencia" },
+  "proj.note": {
+    pt: "São estudos de caso educacionais. As métricas de aço, NLP e forecasting vêm de execuções originais salvas; a simulação de petróleo foi corrigida e reexecutada em setembro de 2026. Resultados de simulação não são receita realizada. Cada repositório documenta o escopo e as limitações da sua avaliação.",
+    en: "These are educational case studies. Steel, NLP and forecasting metrics come from saved original executions; the oil simulation was corrected and rerun in September 2026. Simulation results are not realized revenue. Each repository documents its evaluation scope and limitations.",
+    es: "Son casos de estudio educativos. Las métricas de acero, NLP y forecasting provienen de ejecuciones originales guardadas; la simulación de petróleo se corrigió y volvió a ejecutar en septiembre de 2026. Los resultados de simulación no son ingresos realizados. Cada repositorio documenta el alcance y las limitaciones de su evaluación.",
+  },
+  "viz.model": { pt: "modelo", en: "model", es: "modelo" },
+  "viz.baseline": { pt: "baseline (média)", en: "baseline (mean)", es: "baseline (media)" },
+  "viz.target": { pt: "meta", en: "target", es: "meta" },
+  "viz.limit": { pt: "limite do caso", en: "case limit", es: "límite del caso" },
+  "viz.lower": { pt: "menor é melhor", en: "lower is better", es: "menor es mejor" },
+  "viz.higher": { pt: "maior é melhor", en: "higher is better", es: "mayor es mejor" },
+
+  /* ---------- stack ---------- */
+  "stack.label": { pt: "Stack", en: "Toolkit", es: "Stack" },
+  "stack.meta": { pt: "9 áreas · evidência pública em cada uma", en: "9 areas · public evidence for each", es: "9 áreas · evidencia pública en cada una" },
+  "stack.title": { pt: "Ferramentas a serviço da pergunta.", en: "Tools in service of the question.", es: "Herramientas al servicio de la pregunta." },
+  "stack.intro": { pt: "Selecione uma área para ver as ferramentas e os projetos que as comprovam.", en: "Select an area to see the tools and the projects that back them.", es: "Selecciona un área para ver las herramientas y los proyectos que las respaldan." },
+  "stack.tools": { pt: "Ferramentas e métodos", en: "Tools and methods", es: "Herramientas y métodos" },
+  "stack.evidence": { pt: "Evidência pública", en: "Public evidence", es: "Evidencia pública" },
+  "stack.cert": { pt: "Certificado TripleTen · Data Scientist", en: "TripleTen certificate · Data Scientist", es: "Certificado TripleTen · Data Scientist" },
+  "stack.cert.d": { pt: "Competências listadas no certificado de conclusão (17/09/2026):", en: "Skills listed on the certificate of completion (Sep 17, 2026):", es: "Competencias listadas en el certificado de finalización (17/09/2026):" },
+
+  /* ---------- experience ---------- */
+  "exp.label": { pt: "Experiência", en: "Experience", es: "Experiencia" },
+  "exp.meta": { pt: "2019 — hoje · 6 empresas", en: "2019 — today · 6 companies", es: "2019 — hoy · 6 empresas" },
+  "exp.title": { pt: "Seis anos do lado do cliente.", en: "Six years on the customer side.", es: "Seis años del lado del cliente." },
+  "exp.intro": {
+    pt: "Operações de suporte e experiência construídas do zero, indicadores definidos e acompanhados, e o hábito de conversar com Produto e Engenharia todos os dias.",
+    en: "Support and experience operations built from scratch, indicators defined and tracked, and the habit of talking to Product and Engineering every day.",
+    es: "Operaciones de soporte y experiencia construidas desde cero, indicadores definidos y monitoreados, y el hábito de hablar con Producto e Ingeniería todos los días.",
+  },
+  "exp.now": { pt: "atual", en: "present", es: "actual" },
+  "exp.remote": { pt: "Remoto", en: "Remote", es: "Remoto" },
+  "exp.hybrid": { pt: "Híbrido", en: "Hybrid", es: "Híbrido" },
+  "exp.onsite": { pt: "Presencial", en: "On-site", es: "Presencial" },
+
+  /* ---------- education ---------- */
+  "edu.label": { pt: "Formação", en: "Education", es: "Formación" },
+  "edu.meta": { pt: "UFES · USP · TripleTen", en: "UFES · USP · TripleTen", es: "UFES · USP · TripleTen" },
+  "edu.title": { pt: "Negócios e dados, em paralelo.", en: "Business and data, side by side.", es: "Negocios y datos, en paralelo." },
+  "edu.ongoing": { pt: "em curso", en: "in progress", es: "en curso" },
+  "edu.grade": { pt: "média 9,3", en: "GPA 9.3 / 10", es: "promedio 9,3" },
+  "edu.curriculum": { pt: "Ver os 17 módulos do bootcamp", en: "See the 17 bootcamp modules", es: "Ver los 17 módulos del bootcamp" },
+  "edu.hours": { pt: "horas", en: "hours", es: "horas" },
+  "edu.weeks": { pt: "semanas", en: "weeks", es: "semanas" },
+  "edu.total": { pt: "Total: 36 semanas · 600+ horas", en: "Total: 36 weeks · 600+ hours", es: "Total: 36 semanas · 600+ horas" },
+  "edu.certs": { pt: "Certificações", en: "Certifications", es: "Certificaciones" },
+  "edu.certs.d": {
+    pt: "30 licenças e certificados listados no LinkedIn, entre eles o certificado Data Scientist da TripleTen (nº 202603DSEN001413) e Social Media Marketing I e II pela HubSpot Academy.",
+    en: "30 licenses and certifications listed on LinkedIn, including TripleTen's Data Scientist certificate (no. 202603DSEN001413) and Social Media Marketing I and II from HubSpot Academy.",
+    es: "30 licencias y certificaciones listadas en LinkedIn, entre ellas el certificado Data Scientist de TripleTen (n.º 202603DSEN001413) y Social Media Marketing I y II de HubSpot Academy.",
+  },
+  "lang.title": { pt: "Idiomas", en: "Languages", es: "Idiomas" },
+
+  /* ---------- contact ---------- */
+  "contact.label": { pt: "Contato", en: "Contact", es: "Contacto" },
+  "contact.meta": { pt: "PT · EN · ES · UTC−3", en: "PT · EN · ES · UTC−3", es: "PT · EN · ES · UTC−3" },
+  "contact.title": { pt: "Vamos conversar sobre dados.", en: "Let's talk about data.", es: "Hablemos de datos." },
+  "contact.sub": {
+    pt: "Aberto a conversas sobre Data Science, Machine Learning, Customer Analytics, Product Analytics e Business Analytics — em português, inglês ou espanhol.",
+    en: "Open to conversations about Data Science, Machine Learning, Customer Analytics, Product Analytics and Business Analytics — in Portuguese, English or Spanish.",
+    es: "Abierto a conversaciones sobre Data Science, Machine Learning, Customer Analytics, Product Analytics y Business Analytics — en portugués, inglés o español.",
+  },
+  "contact.copy": { pt: "Copiar e-mail", en: "Copy email", es: "Copiar e-mail" },
+  "contact.copied": { pt: "E-mail copiado", en: "Email copied", es: "E-mail copiado" },
+  "contact.write": { pt: "Escrever e-mail", en: "Write an email", es: "Escribir e-mail" },
+  "contact.location": { pt: "Vitória, ES — Brasil · UTC−3", en: "Vitória, ES — Brazil · UTC−3", es: "Vitória, ES — Brasil · UTC−3" },
+  "contact.avail": { pt: "Experiência remota, híbrida e presencial", en: "Remote, hybrid and on-site experience", es: "Experiencia remota, híbrida y presencial" },
+
+  /* ---------- footer ---------- */
+  "footer.made": { pt: "Site feito à mão em HTML, CSS e JavaScript — sem frameworks.", en: "Hand-built with HTML, CSS and JavaScript — no frameworks.", es: "Sitio hecho a mano en HTML, CSS y JavaScript — sin frameworks." },
+  "footer.top": { pt: "Voltar ao topo", en: "Back to top", es: "Volver arriba" },
+  "footer.rights": { pt: "Todos os direitos reservados.", en: "All rights reserved.", es: "Todos los derechos reservados." },
+
+  /* ---------- CV ---------- */
+  "cv.title": { pt: "Currículo", en: "Résumé", es: "Currículum" },
+  "cv.print": { pt: "Imprimir / Salvar como PDF", en: "Print / Save as PDF", es: "Imprimir / Guardar como PDF" },
+  "cv.hint": { pt: "Na janela de impressão, escolha “Salvar como PDF”. Se ela não abrir, use Ctrl+P (Cmd+P no Mac).", en: "In the print dialog, choose “Save as PDF”. If it doesn't open, press Ctrl+P (Cmd+P on Mac).", es: "En la ventana de impresión, elige “Guardar como PDF”. Si no se abre, usa Ctrl+P (Cmd+P en Mac)." },
+  "cv.summary": { pt: "Resumo", en: "Summary", es: "Resumen" },
+  "cv.summary.text": {
+    pt: "Data Scientist com seis anos de experiência em Customer Success & Experience em empresas SaaS. Conecto perguntas de negócio a análise de dados e machine learning: regressão, classificação, NLP, séries temporais e simulação de risco, sempre avaliados contra um baseline. Formação em Administração (UFES), bootcamp de Data Science (TripleTen, 600+ h) e MBAs na USP.",
+    en: "Data Scientist with six years of experience in Customer Success & Experience at SaaS companies. I connect business questions to data analysis and machine learning: regression, classification, NLP, time series and risk simulation, always evaluated against a baseline. Business Administration degree (UFES), Data Science bootcamp (TripleTen, 600+ h) and MBAs at USP.",
+    es: "Data Scientist con seis años de experiencia en Customer Success & Experience en empresas SaaS. Conecto preguntas de negocio con análisis de datos y machine learning: regresión, clasificación, NLP, series temporales y simulación de riesgo, siempre evaluados contra un baseline. Licenciatura en Administración (UFES), bootcamp de Data Science (TripleTen, 600+ h) y MBA en la USP.",
+  },
+  "cv.experience": { pt: "Experiência profissional", en: "Professional experience", es: "Experiencia profesional" },
+  "cv.projects": { pt: "Projetos selecionados", en: "Selected projects", es: "Proyectos seleccionados" },
+  "cv.education": { pt: "Formação acadêmica", en: "Education", es: "Formación académica" },
+  "cv.skills": { pt: "Competências", en: "Skills", es: "Competencias" },
+  "cv.languages": { pt: "Idiomas", en: "Languages", es: "Idiomas" },
+  "cv.certs": { pt: "Certificações", en: "Certifications", es: "Certificaciones" },
+  "cv.generated": { pt: "Gerado a partir de", en: "Generated from", es: "Generado desde" },
+
+  /* ---------- misc ---------- */
+};
+
+/* ---------- featured projects ---------- */
+const FEATURED = [
+  {
+    id: "steel", repo: "steel-temperature-prediction",
+    title: { pt: "Previsão da temperatura do aço", en: "Steel temperature prediction", es: "Predicción de la temperatura del acero" },
+    kind: { pt: "Regressão industrial", en: "Industrial regression", es: "Regresión industrial" },
+    desc: {
+      pt: "Estimar a temperatura final do aço a partir de dados de processo. LightGBM com engenharia de atributos; a avaliação retrospectiva salva reduziu o MAE em 45,3% frente ao baseline da média.",
+      en: "Estimate final steel temperature from process data. LightGBM with feature engineering; the saved retrospective evaluation reduced MAE by 45.3% against a mean baseline.",
+      es: "Estimar la temperatura final del acero a partir de datos de proceso. LightGBM con ingeniería de atributos; la evaluación retrospectiva guardada redujo el MAE un 45,3% frente al baseline de la media.",
+    },
+    tags: ["LightGBM", { pt: "Regressão", en: "Regression", es: "Regresión" }, "Feature engineering"],
+    metrics: [{ k: "MAE", v: 5.533, unit: " °C", d: 3 }, { k: "R²", v: 0.773, d: 3 }],
+    headline: { v: -45.3, fmt: "pct", d: 1 },
+    headlineLabel: { pt: "MAE vs. baseline", en: "MAE vs. baseline", es: "MAE vs. baseline" },
+    viz: { type: "vs", better: "lower", bars: [{ key: "viz.baseline", pct: 100, v: 100, d: 0, unit: "%" }, { key: "viz.model", pct: 54.7, v: 54.7, d: 1, unit: "%", accent: true }] },
+  },
+  {
+    id: "imdb", repo: "imdb-sentiment-classification",
+    title: { pt: "Classificação de sentimento · IMDB", en: "IMDB sentiment classification", es: "Clasificación de sentimiento · IMDB" },
+    kind: { pt: "NLP · texto", en: "NLP · text", es: "NLP · texto" },
+    desc: {
+      pt: "Classificar o sentimento de resenhas de filmes com um pipeline TF-IDF + Regressão Logística, comparando escolhas de pré-processamento e complexidade de modelo (incluindo LightGBM).",
+      en: "Classify movie-review sentiment with a TF-IDF + Logistic Regression pipeline, comparing text preprocessing choices and model complexity (including LightGBM).",
+      es: "Clasificar el sentimiento de reseñas de películas con un pipeline TF-IDF + Regresión Logística, comparando opciones de preprocesamiento y complejidad del modelo (incluido LightGBM).",
+    },
+    tags: ["NLP", "TF-IDF", { pt: "Classificação de texto", en: "Text classification", es: "Clasificación de texto" }],
+    metrics: [{ k: "F1", v: 0.88, d: 2 }, { k: "ROC-AUC", v: 0.95, d: 2 }],
+    headline: { v: 0.95, fmt: "num", d: 2 },
+    headlineLabel: { pt: "ROC-AUC no teste", en: "test ROC-AUC", es: "ROC-AUC en test" },
+    viz: { type: "score", better: "higher", bars: [{ label: "F1", pct: 88, v: 0.88, d: 2, accent: true }, { label: "ROC-AUC", pct: 95, v: 0.95, d: 2, accent: true }] },
+  },
+  {
+    id: "taxi", repo: "hourly-taxi-demand-forecasting",
+    title: { pt: "Previsão horária de demanda de táxis", en: "Hourly taxi demand forecasting", es: "Pronóstico horario de demanda de taxis" },
+    kind: { pt: "Séries temporais", en: "Time series", es: "Series temporales" },
+    desc: {
+      pt: "Prever a demanda da próxima hora com observações defasadas, estatísticas móveis e validação cruzada temporal. LightGBM como modelo final; RMSE de teste abaixo da meta do projeto.",
+      en: "Forecast next-hour demand using lagged observations, rolling statistics and temporal cross-validation. LightGBM as the final model; test RMSE below the project target.",
+      es: "Pronosticar la demanda de la próxima hora con observaciones rezagadas, estadísticas móviles y validación cruzada temporal. LightGBM como modelo final; RMSE de test por debajo de la meta del proyecto.",
+    },
+    tags: [{ pt: "Séries temporais", en: "Time series", es: "Series temporales" }, "TimeSeriesSplit", "LightGBM"],
+    metrics: [{ k: "RMSE", v: 41.01, d: 2 }, { k: { pt: "meta", en: "target", es: "meta" }, v: 48, d: 0, prefix: "≤ " }],
+    headline: { v: -14.6, fmt: "pct", d: 1 },
+    headlineLabel: { pt: "RMSE abaixo da meta", en: "RMSE below target", es: "RMSE por debajo de la meta" },
+    viz: { type: "vs", better: "lower", bars: [{ key: "viz.target", pct: 100, v: 48, d: 0, prefix: "≤ " }, { key: "viz.model", pct: 85.4, v: 41.01, d: 2, accent: true }] },
+  },
+  {
+    id: "oil", repo: "oil-well-profit-risk-analysis",
+    title: { pt: "Lucro e risco em poços de petróleo", en: "Oil well profit & risk analysis", es: "Beneficio y riesgo en pozos de petróleo" },
+    kind: { pt: "Business analytics", en: "Business analytics", es: "Business analytics" },
+    desc: {
+      pt: "Combinar reservas previstas por regressão com seleção de poços e simulação bootstrap. A Região 1 atende ao limite de 2,5% de risco de perda do caso. Recalculado e reexecutado em setembro de 2026.",
+      en: "Combine regression-predicted reserves with well selection and bootstrap simulation. Region 1 meets the case's 2.5% loss-risk limit. Recalculated and rerun in September 2026.",
+      es: "Combinar reservas predichas por regresión con selección de pozos y simulación bootstrap. La Región 1 cumple el límite de 2,5% de riesgo de pérdida del caso. Recalculado y reejecutado en septiembre de 2026.",
+    },
+    tags: ["Business analytics", { pt: "Regressão", en: "Regression", es: "Regresión" }, "Bootstrap"],
+    metrics: [{ k: { pt: "lucro médio simulado", en: "mean simulated profit", es: "beneficio medio simulado" }, v: 4.61, d: 2, prefix: "US$ ", unit: " M" }, { k: { pt: "risco de perda", en: "loss risk", es: "riesgo de pérdida" }, v: 0.7, d: 1, unit: "%" }],
+    headline: { v: 0.7, fmt: "pctabs", d: 1 },
+    headlineLabel: { pt: "risco de perda · limite 2,5%", en: "loss risk · 2.5% limit", es: "riesgo de pérdida · límite 2,5%" },
+    viz: { type: "vs", better: "lower", bars: [{ key: "viz.limit", pct: 100, v: 2.5, d: 1, unit: "%" }, { key: "viz.model", pct: 28, v: 0.7, d: 1, unit: "%", accent: true }] },
+  },
+];
+
+/* ---------- more case studies ---------- */
+const MORE = [
+  {
+    repo: "bank-customer-churn-prediction",
+    title: { pt: "Previsão de churn de clientes bancários", en: "Bank customer churn prediction", es: "Predicción de churn de clientes bancarios" },
+    focus: { pt: "Customer analytics, Random Forest e desbalanceamento de classes", en: "Customer analytics, Random Forest and class imbalance", es: "Customer analytics, Random Forest y desbalance de clases" },
+    evidence: { pt: "F1 de teste 0,6141 · ROC-AUC 0,8575 (salvos)", en: "Saved test F1 0.6141 · ROC-AUC 0.8575", es: "F1 de test 0,6141 · ROC-AUC 0,8575 (guardados)" },
+  },
+  {
+    repo: "chicago-taxi-sql-analysis",
+    title: { pt: "Análise SQL do mercado de táxis de Chicago", en: "Chicago taxi SQL analysis", es: "Análisis SQL del mercado de taxis de Chicago" },
+    focus: { pt: "Joins, agregações e testes de hipótese em PostgreSQL, pandas e SciPy", en: "SQL joins, aggregations and hypothesis testing with PostgreSQL, pandas and SciPy", es: "Joins, agregaciones y pruebas de hipótesis con PostgreSQL, pandas y SciPy" },
+    evidence: { pt: "6 consultas SQL originais · viagens 21,38% mais longas com mau tempo", en: "Six original SQL queries · trips 21.38% longer in bad weather", es: "6 consultas SQL originales · viajes 21,38% más largos con mal tiempo" },
+  },
+  {
+    repo: "video-game-market-analysis",
+    title: { pt: "Análise do mercado de videogames", en: "Video game market analysis", es: "Análisis del mercado de videojuegos" },
+    focus: { pt: "Ciclos de vida de plataformas, preferências regionais e testes de Welch", en: "Platform life cycles, regional preferences and Welch tests", es: "Ciclos de vida de plataformas, preferencias regionales y pruebas de Welch" },
+    evidence: { pt: "Estudo histórico 2012–2016 para um caso de planejamento de 2017", en: "Historical 2012–2016 study for a 2017 planning case", es: "Estudio histórico 2012–2016 para un caso de planificación de 2017" },
+  },
+];
+
+/* ---------- applied implementations ---------- */
+const APPLIED = [
+  {
+    repo: "instacart-customer-behavior-analysis",
+    title: { pt: "Comportamento de clientes · Instacart", en: "Instacart customer behavior", es: "Comportamiento de clientes · Instacart" },
+    inspect: { pt: "Taxas de recompra, composição da cesta e joins validados", en: "Reorder rates, basket composition and validated joins", es: "Tasas de recompra, composición de la cesta y joins validados" },
+    verify: { pt: "4 testes · exemplo sintético em notebook", en: "4 tests · synthetic notebook example", es: "4 pruebas · ejemplo sintético en notebook" },
+  },
+  {
+    repo: "telecom-plan-revenue-analysis",
+    title: { pt: "Receita por plano · telecom", en: "Telecom plan revenue", es: "Ingresos por plan · telecom" },
+    inspect: { pt: "Regras de faturamento corrigidas e comparação por cliente (Welch)", en: "Corrected billing rules and customer-level comparison (Welch)", es: "Reglas de facturación corregidas y comparación por cliente (Welch)" },
+    verify: { pt: "5 testes · exemplo sintético de fatura", en: "5 tests · synthetic invoice example", es: "5 pruebas · ejemplo sintético de factura" },
+  },
+  {
+    repo: "insurance-ml-data-obfuscation",
+    title: { pt: "ML em seguros & álgebra linear", en: "Insurance ML & linear algebra", es: "ML en seguros y álgebra lineal" },
+    inspect: { pt: "Pipelines com escala só no treino, kNN em validação cruzada e OLS reversível", en: "Train-only scaling pipelines, cross-validated kNN and reversible OLS transformation", es: "Pipelines con escalado solo en entrenamiento, kNN con validación cruzada y OLS reversible" },
+    verify: { pt: "4 testes · prova numérica de invariância", en: "4 tests · numerical invariance proof", es: "4 pruebas · prueba numérica de invariancia" },
+  },
+  {
+    repo: "vehicle-listings-explorer",
+    title: { pt: "Explorador de anúncios de veículos", en: "Vehicle listings explorer", es: "Explorador de anuncios de vehículos" },
+    inspect: { pt: "App Streamlit/Plotly com filtros, gráficos e upload de CSV", en: "Streamlit/Plotly app with filters, charts and CSV upload", es: "App Streamlit/Plotly con filtros, gráficos y carga de CSV" },
+    verify: { pt: "5 testes, incluindo inicialização e interação do app", en: "5 tests, including app startup and interaction", es: "5 pruebas, incluidas inicialización e interacción de la app" },
+  },
+];
+
+/* ---------- toolkit areas ---------- */
+const STACK = [
+  { id: "prep", name: { pt: "Preparação de dados", en: "Data preparation", es: "Preparación de datos" },
+    tools: ["Python", "pandas", "NumPy", { pt: "joins e limpeza", en: "joins & cleaning", es: "joins y limpieza" }, "feature engineering"],
+    evidence: ["steel-temperature-prediction", "instacart-customer-behavior-analysis"] },
+  { id: "model", name: { pt: "Modelagem preditiva", en: "Predictive modeling", es: "Modelado predictivo" },
+    tools: ["scikit-learn", "LightGBM", "XGBoost", "Keras", { pt: "regressão e classificação", en: "regression & classification", es: "regresión y clasificación" }, { pt: "validação cruzada", en: "cross-validation", es: "validación cruzada" }],
+    evidence: ["steel-temperature-prediction", "bank-customer-churn-prediction"] },
+  { id: "nlp", name: { pt: "Linguagem e forecasting", en: "Language & forecasting", es: "Lenguaje y forecasting" },
+    tools: ["NLTK", "spaCy", "TF-IDF", "statsmodels", { pt: "lags e janelas móveis", en: "lags & rolling features", es: "lags y ventanas móviles" }, "TimeSeriesSplit"],
+    evidence: ["imdb-sentiment-classification", "hourly-taxi-demand-forecasting"] },
+  { id: "decision", name: { pt: "Suporte à decisão", en: "Decision support", es: "Soporte a la decisión" },
+    tools: [{ pt: "simulação bootstrap", en: "bootstrap simulation", es: "simulación bootstrap" }, { pt: "métricas de avaliação", en: "evaluation metrics", es: "métricas de evaluación" }, { pt: "limites de risco", en: "risk thresholds", es: "límites de riesgo" }],
+    evidence: ["oil-well-profit-risk-analysis"] },
+  { id: "sql", name: { pt: "SQL e estatística", en: "SQL & statistics", es: "SQL y estadística" },
+    tools: ["PostgreSQL", "SQL (JOIN, CASE, GROUP BY)", "SciPy", { pt: "testes t de Welch", en: "Welch t-tests", es: "pruebas t de Welch" }, { pt: "testes de hipótese", en: "hypothesis testing", es: "pruebas de hipótesis" }],
+    evidence: ["chicago-taxi-sql-analysis", "video-game-market-analysis"] },
+  { id: "apps", name: { pt: "Aplicações interativas", en: "Interactive applications", es: "Aplicaciones interactivas" },
+    tools: ["Streamlit", "Plotly", { pt: "validação de CSV", en: "CSV validation", es: "validación de CSV" }, { pt: "filtros interativos", en: "interactive filtering", es: "filtros interactivos" }],
+    evidence: ["vehicle-listings-explorer"] },
+  { id: "linalg", name: { pt: "Álgebra linear e validação", en: "Linear algebra & validation", es: "Álgebra lineal y validación" },
+    tools: [{ pt: "mínimos quadrados", en: "least squares", es: "mínimos cuadrados" }, { pt: "transformações invertíveis", en: "invertible transforms", es: "transformaciones invertibles" }, "pipelines", { pt: "testes unitários", en: "unit tests", es: "pruebas unitarias" }],
+    evidence: ["insurance-ml-data-obfuscation"] },
+  { id: "delivery", name: { pt: "Análise e entrega", en: "Analysis & delivery", es: "Análisis y entrega" },
+    tools: ["Matplotlib", "Seaborn", "Jupyter", "Git / GitHub", { pt: "documentação bilíngue", en: "bilingual documentation", es: "documentación bilingüe" }],
+    evidence: ["joaovspereira"] },
+  { id: "cx", name: { pt: "Operação e CX", en: "Operations & CX", es: "Operación y CX" },
+    tools: ["NPS", "CSAT", "FCR", "AHT", "SLA", "OKR / KPI", { pt: "CRM e helpdesk", en: "CRM & helpdesk", es: "CRM y helpdesk" }, { pt: "base de conhecimento", en: "knowledge base", es: "base de conocimiento" }],
+    evidence: [] },
+];
+
+const CERT_SKILLS = ["Python", "Jupyter Notebook", "Git", "GitHub", "Pandas", "Matplotlib", "Seaborn", "Plotly", "SQL", "Scikit-learn", "Keras", "LightGBM", "XGBoost", "pymystem", "nltk"];
+
+/* ---------- experience ---------- */
+const EXPERIENCE = [
+  {
+    company: "BitKernel", role: { pt: "Trilingual Customer Service Specialist", en: "Trilingual Customer Service Specialist", es: "Trilingual Customer Service Specialist" },
+    start: "2024-10", end: null, mode: "remote", place: null,
+    bullets: {
+      pt: [
+        "Gestão de carteiras B2B e B2C no Brasil, na Europa e na APAC em uma plataforma de streaming all-in-one para empresas.",
+        "Ponto de escalonamento para tickets complexos, garantindo SLA e qualidade; base de conhecimento e scripts que contribuíram para reduzir o AHT.",
+        "Monitoramento de CSAT, NPS, FCR e AHT com ações corretivas e preventivas; melhorias priorizadas junto a Produto e Desenvolvimento a partir do feedback de clientes.",
+      ],
+      en: [
+        "Manage B2B and B2C client portfolios across Brazil, Europe and APAC on an all-in-one streaming platform for businesses.",
+        "Key escalation point for complex tickets, ensuring SLA compliance and service quality; knowledge base and scripts that contributed to lower AHT.",
+        "Monitor CSAT, NPS, FCR and AHT and propose corrective and preventive actions; prioritize improvements with Product and Development based on customer feedback.",
+      ],
+      es: [
+        "Gestión de carteras B2B y B2C en Brasil, Europa y APAC en una plataforma de streaming all-in-one para empresas.",
+        "Punto de escalamiento para tickets complejos, garantizando SLA y calidad; base de conocimiento y scripts que contribuyeron a reducir el AHT.",
+        "Monitoreo de CSAT, NPS, FCR y AHT con acciones correctivas y preventivas; mejoras priorizadas con Producto y Desarrollo a partir del feedback de clientes.",
+      ],
+    },
+  },
+  {
+    company: "Centro Educacional Viver", role: { pt: "Consultor de CX & Negócios Digitais", en: "CX & Digital Business Consultant", es: "Consultor de CX y Negocios Digitales" },
+    start: "2023-10", end: "2024-10", mode: "onsite", place: "Vitória, ES",
+    bullets: {
+      pt: [
+        "Iniciativas de transformação digital centradas na jornada do cliente, com ganhos mensuráveis de eficiência operacional e satisfação.",
+        "Redesenho dos processos de atendimento e comunicação; implantação de CRM, automações e plataformas de comunicação.",
+        "Relatórios estratégicos de CX (NPS, satisfação e KPIs digitais) para a liderança; treinamento das equipes em experiência do cliente.",
+      ],
+      en: [
+        "Digital transformation initiatives focused on the customer journey, delivering measurable operational efficiency gains and improved satisfaction scores.",
+        "Redesigned core service and communication processes; implemented CRM, automation workflows and communication platforms.",
+        "Strategic CX reports (NPS, satisfaction and digital KPIs) for senior leadership; trained internal teams on customer experience practices.",
+      ],
+      es: [
+        "Iniciativas de transformación digital centradas en el recorrido del cliente, con mejoras medibles de eficiencia operativa y satisfacción.",
+        "Rediseño de los procesos de atención y comunicación; implementación de CRM, automatizaciones y plataformas de comunicación.",
+        "Informes estratégicos de CX (NPS, satisfacción y KPI digitales) para la dirección; capacitación de equipos en experiencia del cliente.",
+      ],
+    },
+  },
+  {
+    company: "Timenow", role: { pt: "Analista de Infraestrutura de TI & Especialista CS/CX", en: "IT Infrastructure Analyst & CS/CX Specialist", es: "Analista de Infraestructura de TI y Especialista CS/CX" },
+    start: "2023-04", end: "2023-10", mode: "hybrid", place: "Vitória, ES",
+    bullets: {
+      pt: [
+        "Estruturação do zero do departamento de Customer Service & Experience para um novo produto digital: processos, fluxos e indicadores.",
+        "Configuração da plataforma de helpdesk (seleção, implantação e treinamento), reduzindo o tempo de primeira resposta.",
+        "Estratégias de CS/CX e roadmaps de curto, médio e longo prazo com KPIs para a alta gestão; NPS acompanhado desde o lançamento.",
+      ],
+      en: [
+        "Built the Customer Service & Experience department from scratch for a new digital product: processes, workflows and performance indicators.",
+        "Configured the helpdesk platform (tool selection, deployment and training), reducing initial response time.",
+        "CS/CX strategies and short-, mid- and long-term roadmaps with KPIs for senior management; NPS tracked from launch.",
+      ],
+      es: [
+        "Estructuración desde cero del departamento de Customer Service & Experience para un nuevo producto digital: procesos, flujos e indicadores.",
+        "Configuración de la plataforma de helpdesk (selección, implementación y capacitación), reduciendo el tiempo de primera respuesta.",
+        "Estrategias de CS/CX y roadmaps de corto, mediano y largo plazo con KPI para la alta dirección; NPS monitoreado desde el lanzamiento.",
+      ],
+    },
+  },
+  {
+    company: "RedTrack.io", role: { pt: "Customer Care Specialist", en: "Customer Care Specialist", es: "Customer Care Specialist" },
+    start: "2022-06", end: "2023-04", mode: "remote", place: null,
+    bullets: {
+      pt: [
+        "Suporte técnico e consultivo, em inglês e espanhol, a clientes internacionais de uma plataforma SaaS de ad tracking e atribuição de conversões.",
+        "Diagnóstico e resolução diária de problemas complexos de integração e rastreamento, mantendo altas taxas de satisfação e retenção.",
+        "Cross-sell e upsell na base existente; documentação e materiais de onboarding que reduziram tickets recorrentes.",
+      ],
+      en: [
+        "Technical and consultative support, in English and Spanish, to international clients of a SaaS ad tracking and conversion attribution platform.",
+        "Diagnosed and resolved complex integration and tracking issues daily, maintaining high satisfaction and retention rates.",
+        "Cross-selling and upselling within the existing base; support documentation and onboarding materials that reduced recurring tickets.",
+      ],
+      es: [
+        "Soporte técnico y consultivo, en inglés y español, a clientes internacionales de una plataforma SaaS de ad tracking y atribución de conversiones.",
+        "Diagnóstico y resolución diaria de problemas complejos de integración y seguimiento, manteniendo altas tasas de satisfacción y retención.",
+        "Cross-selling y upselling en la base existente; documentación y materiales de onboarding que redujeron los tickets recurrentes.",
+      ],
+    },
+  },
+  {
+    company: "AEVO", role: { pt: "Customer Support & Experience Specialist", en: "Customer Support & Experience Specialist", es: "Customer Support & Experience Specialist" },
+    start: "2020-09", end: "2022-04", mode: "hybrid", place: "Vitória, ES",
+    bullets: {
+      pt: [
+        "Desenho e implementação ponta a ponta da operação de Customer Service: processos, contratação e treinamento da equipe.",
+        "Introdução da metodologia NPS na empresa, criando o primeiro baseline de satisfação para decisões de produto e serviço.",
+        "Gestão completa da operação com OKRs e KPIs — capacidade, SLA, qualidade e reporting; base de conhecimento que ampliou o autoatendimento.",
+      ],
+      en: [
+        "End-to-end design and implementation of the Customer Service operation: processes, team hiring and training.",
+        "Introduced the NPS methodology, establishing the company's first customer satisfaction baseline for product and service decisions.",
+        "Managed the operation end-to-end with OKRs and KPIs — capacity, SLA, quality and reporting; knowledge base that increased self-service.",
+      ],
+      es: [
+        "Diseño e implementación de extremo a extremo de la operación de Customer Service: procesos, contratación y capacitación del equipo.",
+        "Introducción de la metodología NPS, creando el primer baseline de satisfacción para decisiones de producto y servicio.",
+        "Gestión completa de la operación con OKR y KPI — capacidad, SLA, calidad y reporting; base de conocimiento que amplió el autoservicio.",
+      ],
+    },
+  },
+  {
+    company: "Ejcad Consultoria", role: { pt: "Account Development Representative", en: "Account Development Representative", es: "Account Development Representative" },
+    start: "2019-02", end: "2020-09", mode: null, place: null,
+    bullets: {
+      pt: [
+        "Prospecção ativa e passiva, construção de pipeline de vendas e apresentação de propostas comerciais.",
+        "Participação em eventos e feiras para expandir a rede; apoio a marketing e a estratégias de retenção e cross-sell.",
+      ],
+      en: [
+        "Active and passive prospecting, sales pipeline building and delivery of commercial proposals.",
+        "Attended events and trade shows to expand the network; supported marketing and retention and cross-selling strategies.",
+      ],
+      es: [
+        "Prospección activa y pasiva, construcción de pipeline de ventas y presentación de propuestas comerciales.",
+        "Participación en eventos y ferias para ampliar la red; apoyo a marketing y a estrategias de retención y cross-selling.",
+      ],
+    },
+  },
+];
+
+/* ---------- education ---------- */
+const EDUCATION = [
+  {
+    id: "tripleten", school: "TripleTen",
+    degree: { pt: "Bootcamp de Data Science · Programa Data Scientist", en: "Data Science Bootcamp · Data Scientist program", es: "Bootcamp de Data Science · Programa Data Scientist" },
+    period: { pt: "nov 2025 – set 2026", en: "Nov 2025 – Sep 2026", es: "nov 2025 – sep 2026" },
+    note: { pt: "Certificado de conclusão emitido em 17/09/2026 · 17 módulos · 600+ horas", en: "Certificate of completion issued Sep 17, 2026 · 17 modules · 600+ hours", es: "Certificado de finalización emitido el 17/09/2026 · 17 módulos · 600+ horas" },
+    curriculum: true,
+  },
+  {
+    id: "usp-ai", school: "Universidade de São Paulo (USP)",
+    degree: { pt: "MBA em Gestão de Negócios Digitais e Inteligência Artificial", en: "MBA in Digital Business Management & Artificial Intelligence", es: "MBA en Gestión de Negocios Digitales e Inteligencia Artificial" },
+    period: { pt: "2025 – 2027", en: "2025 – 2027", es: "2025 – 2027" }, ongoing: true,
+  },
+  {
+    id: "usp-strat", school: "Fundace FEARP · USP",
+    degree: { pt: "MBA em Gestão Estratégica", en: "MBA in Strategic Management", es: "MBA en Gestión Estratégica" },
+    period: { pt: "2024 – 2026", en: "2024 – 2026", es: "2024 – 2026" }, grade: true,
+  },
+  {
+    id: "usp-neuro", school: "Universidade de São Paulo (USP)",
+    degree: { pt: "MBA em Neurociência e Aprendizagem na Educação", en: "MBA in Neuroscience & Learning in Education", es: "MBA en Neurociencia y Aprendizaje en la Educación" },
+    period: { pt: "mai 2026 – atual", en: "May 2026 – present", es: "may 2026 – actual" }, ongoing: true,
+  },
+  {
+    id: "ufes", school: "Universidade Federal do Espírito Santo (UFES)",
+    degree: { pt: "Bacharelado em Administração", en: "Bachelor's degree in Business Administration", es: "Licenciatura en Administración" },
+    period: { pt: "2019 – 2022", en: "2019 – 2022", es: "2019 – 2022" },
+  },
+];
+
+/* TripleTen curriculum — from the certificate's second page */
+const CURRICULUM = [
+  ["Basic Python", 2, "20"], ["Basic Python Continued", 2, "25–30"], ["Data Wrangling", 3, "40"],
+  ["Statistical Data Analysis", 3, "40"], ["Software Development Tools", 3, "40"], ["Integrated Project 1", 1, "20"],
+  ["Data Collection and Storage (SQL)", 2, "40"], ["Introduction to Machine Learning", 2, "40"], ["Supervised Learning", 2, "40"],
+  ["Machine Learning in Business", 2, "40"], ["Linear Algebra", 2, "40"], ["Numerical Methods", 2, "40"], ["Time Series", 2, "40"],
+  ["Machine Learning for Text", 2, "40"], ["Computer Vision", 2, "40"], ["Unsupervised Learning", 2, "40"], ["Final Project", 2, "40"],
+];
+
+/* ---------- languages ---------- */
+const LANGUAGES = [
+  { name: { pt: "Português", en: "Portuguese", es: "Portugués" }, level: { pt: "nativo", en: "native", es: "nativo" }, n: 5 },
+  { name: { pt: "Inglês", en: "English", es: "Inglés" }, level: { pt: "avançado", en: "advanced", es: "avanzado" }, n: 4 },
+  { name: { pt: "Espanhol", en: "Spanish", es: "Español" }, level: { pt: "avançado", en: "advanced", es: "avanzado" }, n: 4 },
+  { name: { pt: "Alemão", en: "German", es: "Alemán" }, level: { pt: "intermediário", en: "intermediate", es: "intermedio" }, n: 3 },
+  { name: { pt: "Italiano", en: "Italian", es: "Italiano" }, level: { pt: "básico a intermediário", en: "basic to intermediate", es: "básico a intermedio" }, n: 2 },
+];
+
+/* ---------- CV skill groups ---------- */
+const CV_SKILLS = [
+  { g: { pt: "Linguagens e dados", en: "Languages & data", es: "Lenguajes y datos" },
+    v: { pt: "Python (pandas, NumPy), SQL (PostgreSQL), Jupyter, Git/GitHub", en: "Python (pandas, NumPy), SQL (PostgreSQL), Jupyter, Git/GitHub", es: "Python (pandas, NumPy), SQL (PostgreSQL), Jupyter, Git/GitHub" } },
+  { g: { pt: "Machine learning", en: "Machine learning", es: "Machine learning" },
+    v: { pt: "scikit-learn, LightGBM, XGBoost, Keras; regressão, classificação, validação cruzada, TimeSeriesSplit", en: "scikit-learn, LightGBM, XGBoost, Keras; regression, classification, cross-validation, TimeSeriesSplit", es: "scikit-learn, LightGBM, XGBoost, Keras; regresión, clasificación, validación cruzada, TimeSeriesSplit" } },
+  { g: { pt: "NLP e séries temporais", en: "NLP & time series", es: "NLP y series temporales" },
+    v: { pt: "NLTK, spaCy, TF-IDF, statsmodels, lags e janelas móveis", en: "NLTK, spaCy, TF-IDF, statsmodels, lags and rolling features", es: "NLTK, spaCy, TF-IDF, statsmodels, lags y ventanas móviles" } },
+  { g: { pt: "Estatística e decisão", en: "Statistics & decision", es: "Estadística y decisión" },
+    v: { pt: "SciPy, testes t de Welch, simulação bootstrap, métricas de avaliação e limites de risco", en: "SciPy, Welch t-tests, bootstrap simulation, evaluation metrics and risk thresholds", es: "SciPy, pruebas t de Welch, simulación bootstrap, métricas de evaluación y límites de riesgo" } },
+  { g: { pt: "Visualização e apps", en: "Visualization & apps", es: "Visualización y apps" },
+    v: { pt: "Matplotlib, Seaborn, Plotly, Streamlit", en: "Matplotlib, Seaborn, Plotly, Streamlit", es: "Matplotlib, Seaborn, Plotly, Streamlit" } },
+  { g: { pt: "Operação e CX", en: "Operations & CX", es: "Operación y CX" },
+    v: { pt: "NPS, CSAT, FCR, AHT, SLA, OKR/KPI, CRM e helpdesk, base de conhecimento", en: "NPS, CSAT, FCR, AHT, SLA, OKR/KPI, CRM & helpdesk, knowledge base", es: "NPS, CSAT, FCR, AHT, SLA, OKR/KPI, CRM y helpdesk, base de conocimiento" } },
+];
+
+/* ============================================================
+   APP — i18n, rendering, motion, interactions. Vanilla JS.
+   ============================================================ */
+(() => {
+  "use strict";
+  const html = document.documentElement;
+  html.classList.remove("no-js");
+  html.classList.add("js");
+
+  const LANGS = ["pt", "en", "es"];
+  const LOCALE = { pt: "pt-BR", en: "en-US", es: "es-ES" };
+  const MONTHS = {
+    pt: ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"],
+    en: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    es: ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"],
+  };
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let lang = "pt";
+
+  /* ---------- helpers ---------- */
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const t = (key) => { const e = UI[key]; if (!e) return key; return e[lang] || e.pt || ""; };
+  const L = (v) => (v == null ? "" : typeof v === "string" ? v : v[lang] || v.pt || v.en || "");
+  const num = (v, d = 0) => new Intl.NumberFormat(LOCALE[lang], { minimumFractionDigits: d, maximumFractionDigits: d }).format(v);
+  const repoUrl = (r) => `${PROFILE.github}/${r}`;
+  const ICON_EXT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>';
+  const store = {
+    get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+    set(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* ignore */ } },
+  };
+
+  function fmtHeadline(h) {
+    const abs = num(Math.abs(h.v), h.d);
+    if (h.fmt === "pct") return (h.v < 0 ? "−" : "+") + abs + "<small>%</small>";
+    if (h.fmt === "pctabs") return abs + "<small>%</small>";
+    return abs;
+  }
+  function fmtMetric(m) {
+    return `<span>${esc(L(m.k))} <b>${m.prefix || ""}${num(m.v, m.d)}${m.unit || ""}</b></span>`;
+  }
+  function fmtRange(start, end) {
+    const [sy, sm] = start.split("-").map(Number);
+    const s = `${MONTHS[lang][sm - 1]} ${sy}`;
+    let e;
+    if (end) { const [ey, em] = end.split("-").map(Number); e = `${MONTHS[lang][em - 1]} ${ey}`; }
+    else e = t("exp.now");
+    return `${s} — ${e}`;
+  }
+  function fmtDuration(start, end) {
+    const [sy, sm] = start.split("-").map(Number);
+    let ey, em;
+    if (end) { [ey, em] = end.split("-").map(Number); }
+    else { const n = new Date(); ey = n.getFullYear(); em = n.getMonth() + 1; }
+    let months = (ey - sy) * 12 + (em - sm) + 1; // inclusive, as LinkedIn counts
+    const y = Math.floor(months / 12), m = months % 12;
+    const W = {
+      pt: { y1: "ano", y: "anos", m1: "mês", m: "meses" },
+      en: { y1: "yr", y: "yrs", m1: "mo", m: "mos" },
+      es: { y1: "año", y: "años", m1: "mes", m: "meses" },
+    }[lang];
+    const parts = [];
+    if (y) parts.push(`${y} ${y === 1 ? W.y1 : W.y}`);
+    if (m) parts.push(`${m} ${m === 1 ? W.m1 : W.m}`);
+    return parts.join(" ");
+  }
+  const modeLabel = (mode) => (mode === "remote" ? t("exp.remote") : mode === "hybrid" ? t("exp.hybrid") : mode === "onsite" ? t("exp.onsite") : "");
+
+  /* ---------- static i18n ---------- */
+  function applyStatic() {
+    $$("[data-i18n]").forEach((el) => { el.textContent = t(el.dataset.i18n); });
+    const hint = $(".tile-hint .hint-text"); if (hint && window.matchMedia("(hover: none)").matches) hint.textContent = t("hero.photo.tap");
+    $$("[data-i18n-aria]").forEach((el) => { el.setAttribute("aria-label", t(el.dataset.i18nAria)); });
+    $$("[data-i18n-alt]").forEach((el) => { el.setAttribute("alt", t(el.dataset.i18nAlt)); });
+    $$(".lang button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
+    html.lang = LOCALE[lang];
+    document.title = t("meta.title");
+    const md = $('meta[name="description"]'); if (md) md.setAttribute("content", t("meta.desc"));
+  }
+
+  /* ---------- marquee ---------- */
+  function renderMarquee() {
+    const el = $("#marquee"); if (!el) return;
+    const txt = esc(t("marquee")).repeat(4);
+    el.innerHTML = `<span>${txt}</span><span>${txt}</span>`;
+  }
+
+  /* ---------- featured projects ---------- */
+  function renderFeatured() {
+    const root = $("#featured"); if (!root) return;
+    root.innerHTML = FEATURED.map((p, i) => {
+      const tags = p.tags.map((x) => `<span class="chip">${esc(L(x))}</span>`).join("");
+      const bars = p.viz.bars.map((b) => {
+        const label = b.label ? b.label : t(b.key);
+        const val = b.v != null ? `${b.prefix || ""}${num(b.v, b.d || 0)}${b.unit || ""}` : "";
+        return `<div class="bar${b.accent ? " accent" : ""}"><span>${esc(label)}</span><b>${esc(val)}</b><div class="bar-track"><div class="bar-fill" style="--w:${b.pct}%"></div></div></div>`;
+      }).join("");
+      return `
+      <article class="feat rv">
+        <div class="feat-idx">0${i + 1}</div>
+        <div class="feat-body">
+          <p class="feat-kind">${esc(L(p.kind))}</p>
+          <h3 class="feat-title"><a href="${repoUrl(p.repo)}" target="_blank" rel="noopener">${esc(L(p.title))}</a></h3>
+          <p class="feat-desc">${esc(L(p.desc))}</p>
+          <div class="feat-foot"><div class="chips">${tags}</div><span class="feat-open">${esc(t("proj.open"))} ${ICON_EXT}</span></div>
+        </div>
+        <div class="feat-viz">
+          <div class="readout">
+            <div class="ro-top"><div class="ro-num">${fmtHeadline(p.headline)}</div><div class="ro-lab">${esc(L(p.headlineLabel))}</div></div>
+            <div class="ro-metrics">${p.metrics.map(fmtMetric).join("")}</div>
+            <div class="bars">${bars}</div>
+            <div class="ro-note">${esc(t(p.viz.better === "lower" ? "viz.lower" : "viz.higher"))}</div>
+          </div>
+        </div>
+      </article>`;
+    }).join("");
+  }
+
+  function renderRows(id, list, [fieldA, keyA], [fieldB, keyB]) {
+    const root = $("#" + id); if (!root) return;
+    root.innerHTML = list.map((r) => `
+      <a class="row rv" href="${repoUrl(r.repo)}" target="_blank" rel="noopener">
+        <h4 class="row-title">${esc(L(r.title))}</h4>
+        <div class="row-cell"><em>${esc(t(keyA))}</em>${esc(L(r[fieldA]))}</div>
+        <div class="row-cell evidence"><em>${esc(t(keyB))}</em>${esc(L(r[fieldB]))}</div>
+        <span class="row-arrow">${ICON_EXT}</span>
+      </a>`).join("");
+  }
+
+  /* ---------- stack ---------- */
+  let openArea = STACK[0].id;
+  function renderAreas() {
+    const root = $("#areas"); if (!root) return;
+    root.innerHTML = STACK.map((a, i) => {
+      const tools = a.tools.map((x) => `<span class="chip">${esc(L(x))}</span>`).join("");
+      const evi = a.evidence.length
+        ? `<div class="evi">${a.evidence.map((r) => `<a href="${repoUrl(r)}" target="_blank" rel="noopener">${ICON_EXT}<span>${esc(r)}</span></a>`).join("")}</div>`
+        : `<div class="evi"><p>${esc({ pt: "Comprovado na trajetória profissional: seis operações de CS/CX estruturadas e medidas (ver Experiência).", en: "Evidenced by the professional track record: six CS/CX operations built and measured (see Experience).", es: "Comprobado en la trayectoria profesional: seis operaciones de CS/CX estructuradas y medidas (ver Experiencia)." }[lang])}</p></div>`;
+      return `
+      <div class="area${a.id === openArea ? " is-open" : ""}" data-area="${a.id}">
+        <button type="button" class="area-btn" aria-expanded="${a.id === openArea}" aria-controls="panel-${a.id}"><span>${esc(L(a.name))}</span><span class="n">0${i + 1}</span></button>
+        <div class="area-panel" id="panel-${a.id}">
+          <h3>${esc(L(a.name))}</h3>
+          <h4>${esc(t("stack.tools"))}</h4>
+          <div class="chips">${tools}</div>
+          <h4>${esc(t("stack.evidence"))}</h4>
+          ${evi}
+        </div>
+      </div>`;
+    }).join("");
+    $$(".area-btn", root).forEach((b) => b.addEventListener("click", () => {
+      openArea = b.closest(".area").dataset.area;
+      $$(".area", root).forEach((el) => {
+        const on = el.dataset.area === openArea;
+        el.classList.toggle("is-open", on);
+        $(".area-btn", el).setAttribute("aria-expanded", String(on));
+      });
+    }));
+    const cs = $("#certSkills"); if (cs) cs.innerHTML = CERT_SKILLS.map((s) => `<span class="chip">${esc(s)}</span>`).join("");
+  }
+
+  /* ---------- experience ---------- */
+  function renderTimeline() {
+    const root = $("#timeline"); if (!root) return;
+    const line = $(".tl-line", root);
+    root.innerHTML = "";
+    root.appendChild(line);
+    EXPERIENCE.forEach((j) => {
+      const chips = [j.mode ? `<span class="chip">${esc(modeLabel(j.mode))}</span>` : "", j.place ? `<span class="chip">${esc(j.place)}</span>` : ""].join("");
+      const el = document.createElement("article");
+      el.className = "job";
+      el.innerHTML = `
+        <span class="job-dot" aria-hidden="true"></span>
+        <div class="job-when"><b>${esc(fmtRange(j.start, j.end))}</b><span>${esc(fmtDuration(j.start, j.end))}</span><div class="chips">${chips}</div></div>
+        <div>
+          <h3 class="job-role">${esc(L(j.role))}</h3>
+          <p class="job-co"><b>${esc(j.company)}</b></p>
+          <ul class="job-bul">${j.bullets[lang].map((b) => `<li>${esc(b)}</li>`).join("")}</ul>
+        </div>`;
+      root.appendChild(el);
+    });
+  }
+
+  /* ---------- education & languages ---------- */
+  function renderDegrees() {
+    const root = $("#degrees"); if (!root) return;
+    root.innerHTML = EDUCATION.map((d) => {
+      const tags = [
+        d.ongoing ? `<span class="chip">${esc(t("edu.ongoing"))}</span>` : "",
+        d.grade ? `<span class="chip acid">${esc(t("edu.grade"))}</span>` : "",
+      ].join("");
+      const note = d.note ? `<span>${esc(L(d.note))}</span>` : "";
+      const curr = d.curriculum ? `
+        <details class="curr"><summary>${esc(t("edu.curriculum"))}</summary>
+          <div class="curr-table">
+            ${CURRICULUM.map(([n, w, h]) => `<div><span>${esc(n)}</span><span>${w} ${esc(t("edu.weeks"))}</span><span>${esc(h)} ${esc(t("edu.hours"))}</span></div>`).join("")}
+            <div class="total"><span>${esc(t("edu.total"))}</span><span>TripleTen</span></div>
+          </div>
+        </details>` : "";
+      return `
+      <div class="deg">
+        <span class="deg-school">${esc(d.school)}</span>
+        <h3 class="deg-name">${esc(L(d.degree))}</h3>
+        <span class="deg-period">${esc(L(d.period))}</span>
+        ${(note || tags) ? `<div class="deg-note">${note}${tags}</div>` : ""}
+        ${curr}
+      </div>`;
+    }).join("");
+    const lr = $("#languages"); if (!lr) return;
+    lr.innerHTML = LANGUAGES.map((l) => `
+      <div class="lang-row rv">
+        <b>${esc(L(l.name))}</b><span>${esc(L(l.level))}</span>
+        <div class="segs" aria-hidden="true">${[1, 2, 3, 4, 5].map((i) => `<i class="${i <= l.n ? "on" : ""}"></i>`).join("")}</div>
+      </div>`).join("");
+  }
+
+  /* ---------- CV ---------- */
+  function renderCV() {
+    const root = $("#cvPaper"); if (!root) return;
+    const exp = EXPERIENCE.map((j) => `
+      <div class="cv-item">
+        <div><h3>${esc(L(j.role))}</h3><p class="cv-org">${esc(j.company)}${j.place ? " · " + esc(j.place) : ""}${j.mode ? " · " + esc(modeLabel(j.mode)) : ""}</p></div>
+        <div class="cv-when">${esc(fmtRange(j.start, j.end))}<br>${esc(fmtDuration(j.start, j.end))}</div>
+        <ul>${j.bullets[lang].map((b) => `<li>${esc(b)}</li>`).join("")}</ul>
+      </div>`).join("");
+    const proj = FEATURED.map((p) => `
+      <div class="cv-item"><p class="cv-proj"><b>${esc(L(p.title))}</b> — ${esc(L(p.desc))} <span class="mono">${p.metrics.map((m) => `${esc(L(m.k))} ${m.prefix || ""}${num(m.v, m.d)}${m.unit || ""}`).join(" · ")}</span> · github.com/joaovspereira/${esc(p.repo)}</p></div>`).join("");
+    const edu = EDUCATION.map((d) => `
+      <div class="cv-item">
+        <div><h3>${esc(L(d.degree))}</h3><p class="cv-org">${esc(d.school)}${d.grade ? " · " + esc(t("edu.grade")) : ""}${d.note ? " · " + esc(L(d.note)) : ""}</p></div>
+        <div class="cv-when">${esc(L(d.period))}${d.ongoing ? "<br>" + esc(t("edu.ongoing")) : ""}</div>
+      </div>`).join("");
+    const skills = CV_SKILLS.map((s) => `<dt>${esc(L(s.g))}</dt><dd>${esc(L(s.v))}</dd>`).join("");
+    const langs = LANGUAGES.map((l) => `<dt>${esc(L(l.name))}</dt><dd>${esc(L(l.level))}</dd>`).join("");
+    const today = new Intl.DateTimeFormat(LOCALE[lang], { month: "long", year: "numeric" }).format(new Date());
+    root.innerHTML = `
+      <header class="cv-head">
+        <div><h1 id="cvTitle">${esc(PROFILE.name)}</h1><p class="cv-role">Data Scientist · Machine Learning · Business Analytics</p></div>
+        <div class="cv-contact">${esc(PROFILE.city)} — ${esc(L(PROFILE.country))}<br><a href="mailto:${PROFILE.email}">${PROFILE.email}</a><br><a href="${PROFILE.linkedin}">linkedin.com/in/joao-vitor-de-souza-pereira</a><br><a href="${PROFILE.github}">github.com/joaovspereira</a></div>
+      </header>
+      <section class="cv-sec"><h2>${esc(t("cv.summary"))}</h2><p>${esc(t("cv.summary.text"))}</p></section>
+      <section class="cv-sec"><h2>${esc(t("cv.experience"))}</h2>${exp}</section>
+      <section class="cv-sec"><h2>${esc(t("cv.projects"))}</h2>${proj}</section>
+      <section class="cv-sec"><h2>${esc(t("cv.education"))}</h2>${edu}</section>
+      <div class="cv-cols">
+        <section class="cv-sec"><h2>${esc(t("cv.skills"))}</h2><dl class="cv-kv">${skills}</dl></section>
+        <div>
+          <section class="cv-sec"><h2>${esc(t("cv.languages"))}</h2><dl class="cv-kv">${langs}</dl></section>
+          <section class="cv-sec"><h2>${esc(t("cv.certs"))}</h2><p>${esc(t("edu.certs.d"))}</p></section>
+        </div>
+      </div>
+      <footer class="cv-foot"><span>${esc(t("cv.generated"))} linkedin.com/in/joao-vitor-de-souza-pereira · github.com/joaovspereira</span><span>${esc(today)}</span></footer>`;
+  }
+
+  /* ---------- language switching ---------- */
+  function renderAll() {
+    applyStatic();
+    renderMarquee();
+    renderFeatured();
+    renderRows("more", MORE, ["focus", "proj.more.focus"], ["evidence", "proj.more.evidence"]);
+    renderRows("applied", APPLIED, ["inspect", "proj.applied.inspect"], ["verify", "proj.applied.verify"]);
+    renderAreas();
+    renderTimeline();
+    renderDegrees();
+    renderCV();
+    observeReveals();
+    tickClock();
+  }
+  function setLang(next, { persist = true, animate = true } = {}) {
+    if (!LANGS.includes(next)) return;
+    const changed = next !== lang;
+    lang = next;
+    const main = $("#main");
+    if (changed && animate && main && !reduceMotion) {
+      main.style.transition = "opacity .18s ease";
+      main.style.opacity = "0";
+      setTimeout(() => { renderAll(); main.style.opacity = "1"; }, 180);
+    } else renderAll();
+    if (persist) store.set("jv-lang", lang);
+  }
+  function detectLang() {
+    // ?lang=xx is honored when someone shares a link in a given language,
+    // then stripped so the address bar stays clean.
+    try { const q = new URL(location.href).searchParams.get("lang"); if (LANGS.includes(q)) return q; } catch (e) { /* ignore */ }
+    const saved = store.get("jv-lang"); if (LANGS.includes(saved)) return saved;
+    const nav = (navigator.language || "pt").slice(0, 2).toLowerCase();
+    return LANGS.includes(nav) ? nav : "en";
+  }
+  function cleanUrl() {
+    try {
+      const u = new URL(location.href);
+      if (!u.search) return;
+      u.search = "";
+      history.replaceState(null, "", u.pathname + u.hash);
+    } catch (e) { /* ignore */ }
+  }
+  document.addEventListener("click", (e) => {
+    const b = e.target.closest(".lang button[data-lang]");
+    if (b) setLang(b.dataset.lang);
+  });
+
+  /* ---------- hero name split ---------- */
+  function splitName() {
+    $$(".hero-name .ln").forEach((ln) => {
+      const text = ln.dataset.split || ln.textContent;
+      let i = 0;
+      ln.innerHTML = Array.from(text).map((ch) => ch === " "
+        ? `<span class="ch sp" style="--i:${i++}">&nbsp;</span>`
+        : `<span class="ch" style="--i:${i++}">${esc(ch)}</span>`).join("");
+    });
+  }
+
+  /* ---------- loader ---------- */
+  function runLoader() {
+    const loader = $("#loader");
+    let seen = false; try { seen = sessionStorage.getItem("jv-seen") === "1"; } catch (e) { /* ignore */ }
+    const finish = () => { if (loader) loader.classList.add("is-done"); html.classList.add("ready"); try { sessionStorage.setItem("jv-seen", "1"); } catch (e) { /* ignore */ } };
+    if (reduceMotion || seen) { html.classList.add("no-loader"); requestAnimationFrame(() => requestAnimationFrame(finish)); return; }
+    const fonts = (document.fonts && document.fonts.ready) ? document.fonts.ready : Promise.resolve();
+    const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+    Promise.all([Promise.race([fonts, wait(1500)]), wait(1150)]).then(finish);
+    setTimeout(finish, 2600); // hard safety net
+  }
+
+  /* ---------- reveals ---------- */
+  let io;
+  function observeReveals() {
+    if (!("IntersectionObserver" in window)) { $$(".rv,.rv-step,.job,.readout,.langs").forEach((el) => el.classList.add("in")); return; }
+    if (!io) {
+      io = new IntersectionObserver((entries) => {
+        entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+      }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+    }
+    $$(".rv,.rv-step,.job,.readout,.langs,#stats").forEach((el) => {
+      if (el.classList.contains("in")) return;
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight * 0.92 && r.bottom > 0) el.classList.add("in");
+      else io.observe(el);
+    });
+  }
+
+  /* ---------- count-up ---------- */
+  function countUp() {
+    const stats = $("#stats"); if (!stats) return;
+    const run = () => $$("b[data-count]", stats).forEach((b) => {
+      const target = Number(b.dataset.count), suffix = b.dataset.suffix || "", final = b.textContent;
+      if (reduceMotion) return;
+      const t0 = performance.now(), dur = 1100;
+      const step = (now) => {
+        const p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+        b.textContent = Math.round(target * e) + (p === 1 ? suffix : "");
+        if (p < 1) requestAnimationFrame(step); else b.textContent = final;
+      };
+      requestAnimationFrame(step);
+    });
+    if ("IntersectionObserver" in window) {
+      const o = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { run(); o.disconnect(); } }, { threshold: 0.3 });
+      o.observe(stats);
+    } else run();
+  }
+
+  /* ---------- scroll: progress, header, spy, timeline ---------- */
+  function onScroll() {
+    const y = window.scrollY || document.documentElement.scrollTop;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const p = max > 0 ? Math.min(100, (y / max) * 100) : 0;
+    const bar = $("#progress"); if (bar) bar.style.width = p + "%";
+    const top = $("#top"); if (top) top.classList.toggle("scrolled", y > 12);
+    const tl = $("#timeline"), fill = $("#tlFill");
+    if (tl && fill) {
+      const r = tl.getBoundingClientRect();
+      const prog = Math.max(0, Math.min(1, (window.innerHeight * 0.62 - r.top) / r.height));
+      fill.style.setProperty("--p", (prog * 100).toFixed(1) + "%");
+    }
+  }
+  function scrollSpy() {
+    if (!("IntersectionObserver" in window)) return;
+    const links = $$(".nav a[data-spy]");
+    const o = new IntersectionObserver((es) => {
+      es.forEach((e) => { if (e.isIntersecting) links.forEach((a) => a.setAttribute("aria-current", String(a.dataset.spy === e.target.id))); });
+    }, { rootMargin: "-38% 0px -58% 0px", threshold: 0 });
+    ["sobre", "projetos", "stack", "experiencia", "formacao", "contato"].forEach((id) => { const s = document.getElementById(id); if (s) o.observe(s); });
+  }
+
+  /* ---------- clock ---------- */
+  function tickClock() {
+    try {
+      const f = new Intl.DateTimeFormat(LOCALE[lang], { hour: "2-digit", minute: "2-digit", timeZone: PROFILE.tz, hour12: false });
+      const s = f.format(new Date());
+      $$("#clock,.clock").forEach((el) => { el.textContent = s; });
+    } catch (e) { /* ignore */ }
+  }
+
+  /* ---------- menu ---------- */
+  function menu() {
+    const btn = $("#menuToggle"), panel = $("#menu"); if (!btn || !panel) return;
+    const set = (open) => { panel.classList.toggle("is-open", open); panel.setAttribute("aria-hidden", String(!open)); btn.setAttribute("aria-expanded", String(open)); document.body.classList.toggle("lock", open); document.body.classList.toggle("menu-open", open); $("span", btn).textContent = t(open ? "nav.close" : "nav.menu"); };
+    btn.addEventListener("click", () => set(!panel.classList.contains("is-open")));
+    $$("a,.cv-open", panel).forEach((a) => a.addEventListener("click", () => set(false)));
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && panel.classList.contains("is-open")) set(false); });
+  }
+
+  /* ---------- toast + copy ---------- */
+  let toastT;
+  function toast(msg) { const el = $("#toast"); if (!el) return; el.textContent = msg; el.classList.add("show"); clearTimeout(toastT); toastT = setTimeout(() => el.classList.remove("show"), 2200); }
+  function copyEmail() {
+    const b = $("#copyEmail"); if (!b) return;
+    b.addEventListener("click", async () => {
+      try { await navigator.clipboard.writeText(PROFILE.email); toast(t("contact.copied")); }
+      catch (e) { const ta = document.createElement("textarea"); ta.value = PROFILE.email; document.body.appendChild(ta); ta.select(); try { document.execCommand("copy"); toast(t("contact.copied")); } catch (e2) { toast(PROFILE.email); } ta.remove(); }
+    });
+  }
+
+  /* ---------- CV overlay ---------- */
+  function cv() {
+    const layer = $("#cv"), close = $("#cvClose"), print = $("#cvPrint"); if (!layer) return;
+    let opener = null;
+    const open = (e) => { opener = e && e.currentTarget; renderCV(); layer.hidden = false; document.body.classList.add("lock"); layer.scrollTop = 0; setTimeout(() => close && close.focus(), 50); };
+    const shut = () => { layer.hidden = true; document.body.classList.remove("lock"); if (opener && opener.focus) opener.focus(); };
+    $$(".cv-open").forEach((b) => b.addEventListener("click", open));
+    if (close) close.addEventListener("click", shut);
+    if (print) print.addEventListener("click", () => { try { window.print(); } catch (e) { toast(t("cv.hint")); } });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !layer.hidden) shut(); });
+    layer.addEventListener("click", (e) => { if (e.target === layer) shut(); });
+  }
+
+  /* ---------- tile (touch: tap toggles color) ---------- */
+  function tile() {
+    const el = $("#tile"); if (!el) return;
+    el.addEventListener("click", () => el.classList.toggle("color"));
+    el.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); el.classList.toggle("color"); } });
+  }
+
+  /* ---------- init ---------- */
+  function init() {
+    lang = detectLang();
+    cleanUrl();
+    splitName();
+    renderAll();
+    runLoader();
+    countUp();
+    scrollSpy();
+    menu();
+    copyEmail();
+    cv();
+    tile();
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    setInterval(tickClock, 20000);
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
+})();
+
+</script>
+</body>
+</html>
